@@ -16,11 +16,11 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
               NYC Parks wants to cut down 78 mature trees and pave 13,000 sq ft of our beloved Fort Greene Park. 
-              We're fighting to save our urban forest.
+              We&apos;re showing them that their plan is unwanted by the people.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg">
-                <Link href="/action">Sign the Petition</Link>
+                <Link href="/action">Help Us!</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/issue">Learn More</Link>
