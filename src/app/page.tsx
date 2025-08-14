@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { TreePine, Users, Calendar, AlertTriangle } from "lucide-react"
+import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
+import { VideoGallery } from "@/components/video-gallery"
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg">
-                <Link href="/action">Help Us!</Link>
+                <Link href="/action">Take Action</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link href="/issue">Learn More</Link>
@@ -43,7 +44,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Facts */}
+      {/* Why This Matters */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -51,7 +52,7 @@ export default function Home() {
               Why This Matters
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Mature trees provide irreplaceable environmental benefits that take decades to restore.
+              The people using Fort Greene Park today depend on these trees for their daily comfort and health.
             </p>
           </div>
           
@@ -59,10 +60,30 @@ export default function Home() {
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="text-primary mb-4">
-                  <TreePine className="h-12 w-12 mx-auto" />
+                  <span className="text-4xl">👨‍👩‍👧‍👦</span>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">70×</h3>
-                <p className="text-muted-foreground">More pollution removal than saplings</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">Kids & Families</h3>
+                <p className="text-muted-foreground">Children playing, families picnicking, and neighbors exercising all rely on the cooling shade these mature trees provide</p>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="text-primary mb-4">
+                  <ThermometerSun className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Less Heat</h3>
+                <p className="text-muted-foreground">Concrete plaza creates urban heat island effect, making the park uncomfortably hot instead of the cool oasis it is today</p>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="text-primary mb-4">
+                  <Volume2 className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Noise Buffer</h3>
+                <p className="text-muted-foreground">Trees naturally absorb city noise, creating the peaceful atmosphere that makes this park a true escape from urban stress</p>
               </CardContent>
             </Card>
             
@@ -71,30 +92,33 @@ export default function Home() {
                 <div className="text-primary mb-4">
                   <span className="text-4xl">🫁</span>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">77 tons</h3>
-                <p className="text-muted-foreground">Air pollution removed by London plane trees annually</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">Clean Air</h3>
+                <p className="text-muted-foreground">Mature trees remove 70× more pollution than saplings, cleaning the air that Brooklyn families breathe every day</p>
               </CardContent>
             </Card>
-            
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-primary mb-4">
-                  <span className="text-4xl">💧</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">1,432</h3>
-                <p className="text-muted-foreground">Gallons of stormwater intercepted per tree annually</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-primary mb-4">
-                  <span className="text-4xl">⚡</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">$47</h3>
-                <p className="text-muted-foreground">Annual energy savings per street tree</p>
-              </CardContent>
-            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Videos */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Voices from the Community
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear directly from neighbors, families, and experts about why Fort Greene Park's trees matter.
+            </p>
+          </div>
+          <VideoGallery />
+          <div className="text-center mt-12">
+            <Button asChild size="lg">
+              <Link href="/stories">
+                Read More Community Stories
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

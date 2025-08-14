@@ -11,10 +11,9 @@ export function Navbar() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About the Issue", href: "/issue" },
-    { name: "Stories", href: "/stories" },
+    { name: "Community Voices", href: "/stories" },
     { name: "News & Timeline", href: "/news" },
     { name: "Action Center", href: "/action" },
-    { name: "Resources", href: "/resources" },
     { name: "About Us", href: "/about" },
   ]
 
