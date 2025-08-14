@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Maria Rodriguez",
+    "content": "I practice tai chi under these trees every morning. The energy and shade of mature trees help me heal. Replacing them with concrete would destroy this peaceful sanctuary.",
+    "type": "written"
+  },
+  {
+    "id": "2", 
+    "name": "Dr. James Chen",
+    "content": "As a respiratory specialist, I see firsthand how tree removal affects air quality. These mature trees remove 70 times more pollution than saplings - we can't afford to lose them.",
+    "type": "written"
+  },
+  {
+    "id": "3",
+    "name": "Community Member",
+    "content": "The plan is not inclusive and formal, directed, gentrified to a specific culture and economic level. The northwest corner is a functioning, vibrant and quiet gathering place.",
+    "type": "written"
+  },
+  {
+    "id": "4",
+    "name": "Local Parent",
+    "content": "My children play here every day after school. The trees provide essential shade and a natural playground. Replacing this with concrete is absurd given climate change.",
+    "type": "written"
+  },
+  {
+    "id": "5",
+    "name": "Christabel Gough, Preservationist", 
+    "content": "Creating a grand vista reminiscent of Mussolini's Rome is not in the Olmsted tradition. This destroys the naturalistic landscape that makes Fort Greene Park special.",
+    "type": "written"
+  },
+  {
+    "id": "6",
+    "name": "Michael Gruen, City Club of New York",
+    "content": "We must preserve the mixture of monumental and bucolic features that make this park unique. The low stone wall and tree grove create the perfect approach to the monument.",
+    "type": "written"
+  }
+]

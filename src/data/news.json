@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "date": "2025-07-15",
+    "title": "Judge Dismisses Lawsuit, Allows Tree Removal",
+    "excerpt": "News 12 reports that a judge dismissed the lawsuit, allowing NYC Parks to proceed with cutting down trees. FFGP expresses disappointment but vows to continue fighting.",
+    "category": "legal",
+    "source": "News 12",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "2", 
+    "date": "2023-06-10",
+    "title": "Meeting with Parks Commissioner Sue Donoghue",
+    "excerpt": "FFGP met with Parks Commissioner Sue Donoghue, who confirmed the department's eagerness to move ahead despite opposition.",
+    "category": "community",
+    "source": "FFGP",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "3",
+    "date": "2021-03-22",
+    "title": "Residents Demand Answers on Tree Removal Plan",
+    "excerpt": "Brooklyn Paper reports that residents demanded answers and that Parks Commissioner Mitchell Silver was forcing through the unpopular plan.",
+    "category": "media",
+    "source": "Brooklyn Paper",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "4",
+    "date": "2020-08-15",
+    "title": "Lawsuit Results in Stay of Execution for Trees",
+    "excerpt": "Kings County Politics reports that residents came together and prevailed in court, resulting in a temporary halt to tree removal.",
+    "category": "legal",
+    "source": "Kings County Politics", 
+    "sourceUrl": "#"
+  },
+  {
+    "id": "5",
+    "date": "2019-11-30",
+    "title": "Assemblyman Warns Against Tree Replacement Plan",
+    "excerpt": "Assemblyman Walter Mosley argued that trees with longevity should not be replaced by immature saplings and warned the plan could spur gentrification.",
+    "category": "community",
+    "source": "Brooklyn Paper",
+    "sourceUrl": "#"
+  },
+  {
+    "id": "6",
+    "date": "2017-09-12",
+    "title": "Landmarks Commission Criticizes Parks Without Borders Design",
+    "excerpt": "During a 2017 hearing, LPC commissioners criticized the Parks Without Borders design as 'antithetical' to Olmsted's vision and 'not very friendly' for gatherings.",
+    "category": "legal",
+    "source": "NYC LPC",
+    "sourceUrl": "#"
+  }
+]
