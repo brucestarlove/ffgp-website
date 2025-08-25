@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Save Fort Greene Park's
+              Save Fort Greene Park&apos;s
               <span className="text-primary block">Mature Trees</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -40,6 +41,75 @@ export default function Home() {
               <strong>July 2025 Update:</strong> Judge dismissed our lawsuit - NYC Parks approved to cut down trees. 
               <Link href="/news" className="underline ml-1">Stay informed →</Link>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Counter-Proposal Section */}
+      <section className="bg-primary/5 py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              There&apos;s a Better Way
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              We support sensible improvements that preserve trees and serve the community. 
+              See how we can enhance the park without destroying its natural character.
+            </p>
+          </div>
+
+          {/* Before/After Concept */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="space-y-6">
+              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
+                <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                  <Image 
+                    src="/img/Proposal-01.webp" 
+                    alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Cut down 78 mature trees</li>
+                  <li>• Pave 13,314 sq ft with concrete</li>
+                  <li>• Remove natural landscape mounds</li>
+                  <li>• Create heat island effect</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
+                <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                  <Image 
+                    src="/img/Counter-proposal-01.webp" 
+                    alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Preserve all healthy mature trees</li>
+                  <li>• Improve ADA accessibility</li>
+                  <li>• Restore historic landscape features</li>
+                  <li>• Enhance drainage infrastructure</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button asChild size="lg" className="text-lg px-8 py-4">
+              <Link href="/issue">
+                See Full Counter-Proposal Details
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

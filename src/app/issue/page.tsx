@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight } from "lucide-react"
@@ -20,6 +21,185 @@ export default function IssuePage() {
               With that, will be noise pollution and hot, direct sunlight on the people in the park
               who are enjoying the shade of the canopy today.
             </p>
+            <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
+              We agree with many of their proposals! We do want more accessibility and improvements to the area. 
+              The problems include that they plan to remove canopy for vain reasons, which will also take decades to grow back.
+              They lied that some of the trees dying—opposite of their own forestry report—which raised flags about their true intentions
+              and integrity. NYC Parks claims this is all what the community wants, yet every person we talk to in the park has disagreed—FOR YEARS.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Counter-Proposal Highlight */}
+      <section className="bg-primary/5 py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              Our Community Counter-Proposal
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Sensible improvements that preserve trees, enhance accessibility, and restore historic features 
+              without destroying the park&apos;s natural character.
+            </p>
+          </div>
+
+          {/* Before/After Visual */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
+              <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-400 rounded-lg flex items-center justify-center mb-4">
+                <Image 
+                    src="/img/Proposal-01.webp" 
+                    alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+              </div>
+            </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
+              <div className="aspect-video bg-gradient-to-br from-green-200 to-green-400 rounded-lg flex items-center justify-center mb-4">
+                <Image 
+                    src="/img/Counter-proposal-01.webp" 
+                    alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
+              </div>
+            </div>
+          </div>
+
+          {/* Large Concept Image */}
+          <div className="mb-16">
+            <div className="aspect-[16/9] bg-gradient-to-br from-green-300 to-primary/30 rounded-xl flex items-center justify-center">
+              <span className="text-xl font-medium text-green-800">
+                Full Counter-Proposal Concept Rendering
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Benefits */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Counter-Proposal Benefits
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our plan addresses all community needs while preserving the park&apos;s environmental and historic value.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <span className="text-2xl">🏛️</span>
+                    Restore Historic Landscape Features
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Repair masonry walls</li>
+                    <li>• Restore landscape mounds</li>
+                    <li>• Rebuild circular plaza</li>
+                    <li>• Restore hierarchy of historically appropriate benches</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <span className="text-2xl">♿</span>
+                    Implement ADA Compliance
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Install accessible ramps at stairs, providing equal access for all</li>
+                    <li>• Install accessible granite block paving at benches</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <span className="text-2xl">🌧️</span>
+                    Upgrade Drainage Infrastructure
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Maintain/repair masonry perimeter retaining wall</li>
+                    <li>• Rebuild paths to control runoff</li>
+                    <li>• Reduce plaza width to minimize site runoff</li>
+                    <li>• Maintain/enhance granite block paving to absorb runoff</li>
+                    <li>• Maintain/enhance site plantings as rain gardens</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <TreePine className="h-6 w-6" />
+                    Retain/Enhance Historic Tree Canopy
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Retain historic varieties of tree species</li>
+                    <li>• Replace trees as needed for risk management and tree health</li>
+                    <li>• Selectively prune mature trees</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <span className="text-2xl">🪨</span>
+                    Preserve Historic Paving/Reduce Concrete
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Minimize paving at circular plaza by expanding planting circle</li>
+                    <li>• Retain historic pink granite block paving at park perimeter</li>
+                    <li>• Reduce extent of concrete paving at barbecue areas</li>
+                    <li>• Expand tree pits/enhance herbaceous ground cover</li>
+                    <li>• No fencing at tree pits</li>
+                    <li>• Reduce extraneous/non-historic decorative paving</li>
+                    <li>• No Jet Mist granite banding or tinted concrete pavers</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-primary">
+                    <span className="text-2xl">🏘️</span>
+                    Preserve Neighborhood Scale
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Retain or minimize width of plaza and park paths</li>
+                    <li>• Maintain human-scale proportions that encourage community use</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
