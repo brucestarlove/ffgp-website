@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Calendar, ExternalLink, Scale, Users, FileText, AlertTriangle } from "lucide-react"
 import newsData from "@/data/news.json"
+import { Footer } from "@/components/footer"
 
 type NewsCategory = "legal" | "media" | "community" | "update"
 
@@ -245,6 +246,7 @@ export default function NewsPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

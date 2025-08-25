@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Heart, Users, TreePine, Calendar, ArrowRight, MapPin } from "lucide-react"
+import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
   return (
@@ -384,6 +385,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

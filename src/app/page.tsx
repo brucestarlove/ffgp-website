@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
 import { VideoGallery } from "@/components/video-gallery"
 import { ImageLightbox } from "@/components/image-lightbox"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -239,27 +240,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-muted-foreground">
-              Friends of Fort Greene Park is a 501(c)(3) non-profit supporting protection and preservation of the urban forest.
-            </p>
-            <div className="mt-6 flex justify-center space-x-6">
-              <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                About Us
-              </Link>
-              <Link href="/resources" className="text-muted-foreground hover:text-foreground">
-                Resources
-              </Link>
-              <Link href="/action" className="text-muted-foreground hover:text-foreground">
-                Contact Officials
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

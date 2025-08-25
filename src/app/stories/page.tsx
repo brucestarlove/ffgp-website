@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Quote, Users, Heart, ArrowRight } from "lucide-react"
 import testimonials from "@/data/testimonials.json"
+import { Footer } from "@/components/footer"
 
 export default function StoriesPage() {
   return (
@@ -213,6 +214,7 @@ export default function StoriesPage() {
           </Card>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
