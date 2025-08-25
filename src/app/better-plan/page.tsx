@@ -342,7 +342,7 @@ export default function IssuePage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-primary text-lg">♿</span>
-                  <span>Install accessible ramps and improve ADA access</span>
+                  <span>Improve ADA access at existing entrances</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-primary text-lg">🪨</span>
@@ -350,7 +350,7 @@ export default function IssuePage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-primary text-lg">🏔️</span>
-                  <span>Restore A.E. Bye's naturalistic landscape mounds</span>
+                  <span>Restore A.E. Bye&apos;s naturalistic landscape mounds</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-primary text-lg">🔍</span>
@@ -418,7 +418,7 @@ export default function IssuePage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">
-                  NYC's existing tree canopy helped children avoid <strong>7,380 asthma-related school absences</strong> 
+                  NYC&apos;s existing tree canopy helped children avoid <strong>7,380 asthma-related school absences</strong> 
                   and prevented <strong>54 emergency-room visits</strong> and <strong>46 hospital stays</strong> for respiratory illness.
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -436,8 +436,11 @@ export default function IssuePage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">
-                  Replacing trees with pavement will create a <strong>"frying-pan effect,"</strong> trapping heat 
+                  Replacing trees with pavement will create a <strong>&quot;frying-pan effect,&quot;</strong> trapping heat 
                   in the plaza and worsening the urban heat island.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  According to <a href="https://gothamist.com/news/new-york-city-has-americas-greatest-heat-islands-by-great-we-mean-the-worst" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">one report</a>, New York City ranks as having the worst heat island effect.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   New York has declared a climate emergency and should preserve mature trees to mitigate rising temperatures.
@@ -458,7 +461,7 @@ export default function IssuePage() {
                   preventing flooding and reducing strain on the sewer system.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Mature trees have extensive root systems that far exceed saplings' water absorption capacity.
+                  Mature trees have extensive root systems that far exceed saplings&apos; water absorption capacity.
                 </p>
               </CardContent>
             </Card>
@@ -474,7 +477,7 @@ export default function IssuePage() {
               Historic and Design Legacy
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              The proposed plaza contradicts the park's original naturalistic design philosophy.
+              The proposed plaza contradicts the park&apos;s original naturalistic design philosophy.
             </p>
           </div>
 
@@ -485,7 +488,7 @@ export default function IssuePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Fort Greene Park's original design by <strong>Frederick Law Olmsted and Calvert Vaux</strong> 
+                  Fort Greene Park&apos;s original design by <strong>Frederick Law Olmsted and Calvert Vaux </strong> 
                   emphasized naturalistic landscapes and surprise. Olmsted drew inspiration from English country 
                   gardens to create &quot;lungs of the city&quot; where visitors enter an oasis, not a boulevard.
                 </p>
