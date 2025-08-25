@@ -1,31 +1,36 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight } from "lucide-react"
+import { ImageLightbox } from "@/components/image-lightbox"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "A Better Plan - Fort Greene Park Counter-Proposal | FFGP",
+  description: "Our community counter-proposal preserves 78 mature trees while improving accessibility and drainage. See how we can enhance Fort Greene Park without destroying its natural character.",
+  keywords: ["Fort Greene Park", "counter-proposal", "save trees", "NYC Parks", "community plan", "preserve trees", "accessibility"],
+}
 
 export default function IssuePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-destructive/10 to-background py-16 lg:py-24">
+      <section className="bg-gradient-to-b from-primary/10 to-background py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              The Issue: 
-              <span className="text-destructive block">Misrepresenting the desires of the people.</span>
+              A Better Path Forward for
+              <span className="text-primary block">Fort Greene Park</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              NYC Parks&apos; redesign would cut down 78 mature trees and pave more than 13,000 square feet 
-              of open greenspace to create a concrete plaza - all for an unobstructed view of the monument.
-              With that, will be noise pollution and hot, direct sunlight on the people in the park
-              who are enjoying the shade of the canopy today.
+              We support many parts of NYC Parks&apos; plan, but we oppose the removal of 78 mature trees 
+              and the historic design changes that would fundamentally alter this beloved community space.
             </p>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              We agree with many of their proposals! We do want more accessibility and improvements to the area. 
-              The problems include that they plan to remove canopy for vain reasons, which will also take decades to grow back.
-              They lied that some of the trees dying—opposite of their own forestry report—which raised flags about their true intentions
-              and integrity. NYC Parks claims this is all what the community wants, yet every person we talk to in the park has disagreed—FOR YEARS.
+              While we support improvements to accessibility, drainage, and benches, we cannot support 
+              plans that erase 78 mature shade trees and historic design features—especially when hundreds 
+              of neighbors have spoken out against them. There&apos;s a collaborative way forward that preserves 
+              what makes this park special while addressing the community&apos;s real needs.
             </p>
           </div>
         </div>
@@ -49,7 +54,7 @@ export default function IssuePage() {
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
               <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
               <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-400 rounded-lg flex items-center justify-center mb-4">
-                <Image 
+                <ImageLightbox
                     src="/img/Proposal-01.webp" 
                     alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
                     width={800}
@@ -57,17 +62,33 @@ export default function IssuePage() {
                     className="w-full h-full object-contain"
                   />
               </div>
+              <div className="text-center">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/pdfs/Fort Greene Park PWB Proposal and Tree Removal Diagram.pdf" target="_blank">
+                    View Full NYC Parks Plan (PDF)
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
             <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
               <div className="aspect-video bg-gradient-to-br from-green-200 to-green-400 rounded-lg flex items-center justify-center mb-4">
-                <Image 
+                <ImageLightbox
                     src="/img/Counter-proposal-01.webp" 
                     alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
                     width={800}
                     height={450}
                     className="w-full h-full object-contain"
                   />
+              </div>
+              <div className="text-center">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/pdfs/Friends of Fort Greene Park on PWB Redesign 03.19.18.pdf" target="_blank">
+                    View Full Counter-Proposal (PDF)
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

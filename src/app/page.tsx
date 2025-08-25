@@ -1,9 +1,9 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
 import { VideoGallery } from "@/components/video-gallery"
+import { ImageLightbox } from "@/components/image-lightbox"
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
                 <Link href="/action">Take Action</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="/issue">Learn More</Link>
+                <Link href="/better-plan">Learn More</Link>
               </Button>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
               <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                  <Image 
+                  <ImageLightbox
                     src="/img/Proposal-01.webp" 
                     alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
                     width={800}
@@ -85,7 +85,7 @@ export default function Home() {
               <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                  <Image 
+                  <ImageLightbox
                     src="/img/Counter-proposal-01.webp" 
                     alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
                     width={800}
@@ -105,7 +105,7 @@ export default function Home() {
 
           <div className="text-center">
             <Button asChild size="lg" className="text-lg px-8 py-4">
-              <Link href="/issue">
+              <Link href="/better-plan">
                 See Full Counter-Proposal Details
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -231,7 +231,7 @@ export default function Home() {
                   Understand why preserving mature trees matters for climate resilience.
                 </p>
                 <Button variant="outline" asChild className="w-full">
-                  <Link href="/issue">Read More</Link>
+                  <Link href="/better-plan">Read More</Link>
                 </Button>
               </CardContent>
             </Card>

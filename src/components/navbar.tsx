@@ -10,7 +10,7 @@ export function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About the Issue", href: "/issue" },
+    { name: "A Better Plan", href: "/better-plan" },
     { name: "Community Voices", href: "/stories" },
     { name: "News & Timeline", href: "/news" },
     { name: "Action Center", href: "/action" },
