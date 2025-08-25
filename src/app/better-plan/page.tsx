@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight } from "lucide-react"
+import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight, Target, Award, Leaf, Landmark, FileText, Megaphone } from "lucide-react"
 import { ImageLightbox } from "@/components/image-lightbox"
+import { TableOfContents } from "@/components/table-of-contents"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -12,6 +13,39 @@ export const metadata: Metadata = {
 }
 
 export default function IssuePage() {
+  const tocItems = [
+    {
+      id: "counter-proposal",
+      label: "Our Counter-Proposal",
+      icon: <Target className="h-4 w-4" />
+    },
+    {
+      id: "benefits",
+      label: "The Benefits",
+      icon: <Award className="h-4 w-4" />
+    },
+    {
+      id: "trees-matter",
+      label: "Why Trees Matter",
+      icon: <Leaf className="h-4 w-4" />
+    },
+    {
+      id: "historic-legacy",
+      label: "Historic Legacy",
+      icon: <Landmark className="h-4 w-4" />
+    },
+    {
+      id: "legal-concerns",
+      label: "Legal Concerns",
+      icon: <FileText className="h-4 w-4" />
+    },
+    {
+      id: "take-action",
+      label: "Take Action",
+      icon: <Megaphone className="h-4 w-4" />
+    }
+  ]
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -37,7 +71,7 @@ export default function IssuePage() {
       </section>
 
       {/* Counter-Proposal Highlight */}
-      <section className="bg-primary/5 py-16 lg:py-24">
+      <section id="counter-proposal" className="bg-primary/5 py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
@@ -92,20 +126,11 @@ export default function IssuePage() {
               </div>
             </div>
           </div>
-
-          {/* Large Concept Image */}
-          <div className="mb-16">
-            <div className="aspect-[16/9] bg-gradient-to-br from-green-300 to-primary/30 rounded-xl flex items-center justify-center">
-              <span className="text-xl font-medium text-green-800">
-                Full Counter-Proposal Concept Rendering
-              </span>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Detailed Benefits */}
-      <section className="py-16 lg:py-24">
+      <section id="benefits" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -226,7 +251,7 @@ export default function IssuePage() {
       </section>
 
       {/* The Plan vs Counter-Proposal */}
-      <section className="py-16 lg:py-24">
+      <section id="comparison" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="border-destructive/20">
@@ -293,7 +318,7 @@ export default function IssuePage() {
       </section>
 
       {/* Environmental Impact */}
-      <section className="bg-muted py-16 lg:py-24">
+      <section id="trees-matter" className="bg-muted py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -397,7 +422,7 @@ export default function IssuePage() {
       </section>
 
       {/* Historic and Design Legacy */}
-      <section className="py-16 lg:py-24">
+      <section id="historic-legacy" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -446,7 +471,7 @@ export default function IssuePage() {
       </section>
 
       {/* Legal and Procedural Issues */}
-      <section className="bg-muted py-16 lg:py-24">
+      <section id="legal-concerns" className="bg-muted py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -504,7 +529,7 @@ export default function IssuePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24">
+      <section id="take-action" className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
@@ -527,6 +552,8 @@ export default function IssuePage() {
           </div>
         </div>
       </section>
+      
+      <TableOfContents items={tocItems} />
     </div>
   )
 }
