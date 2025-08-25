@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight, Target, Award, Leaf, Landmark, FileText, Megaphone } from "lucide-react"
-import { ImageLightbox } from "@/components/image-lightbox"
+import { ImageCarousel } from "@/components/image-carousel"
 import { TableOfContents } from "@/components/table-of-contents"
 import { Footer } from "@/components/footer"
 import { Metadata } from "next"
@@ -47,6 +47,54 @@ export default function IssuePage() {
     }
   ]
 
+  const nycParksPlanImages = [
+    {
+      src: "/img/Proposal-01.webp",
+      alt: "NYC Parks Plan: Remove 78 Trees + Concrete Plaza",
+      width: 800,
+      height: 450
+    },
+    {
+      src: "/img/proposal-byemounds.webp",
+      alt: "NYC Parks Plan: Remove 78 Trees + Concrete Plaza",
+      width: 800,
+      height: 450
+    },
+    {
+      src: "/img/proposal-corner-trees.webp",
+      alt: "NYC Parks Plan: Remove 78 Trees + Concrete Plaza",
+      width: 800,
+      height: 450
+    },
+  ]
+
+  const counterProposalImages = [
+    {
+      src: "/img/Counter-proposal-01.webp",
+      alt: "Community Counter-Proposal: Preserve Trees + Smart Improvements",
+      width: 800,
+      height: 450
+    },
+    {
+      src: "/img/existing-byemounds.webp",
+      alt: "Community Counter-Proposal: Preserve Trees + Smart Improvements",
+      width: 800,
+      height: 450
+    },
+    {
+      src: "/img/existing-corner-trees.webp",
+      alt: "Community Counter-Proposal: Preserve Trees + Smart Improvements",
+      width: 800,
+      height: 450
+    },
+    // {
+    //   src: "/img/Save-71-trees.webp",
+    //   alt: "Save 71 Trees Campaign Visual",
+    //   width: 800,
+    //   height: 450
+    // }
+  ]
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -89,13 +137,10 @@ export default function IssuePage() {
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
               <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
               <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-400 rounded-lg flex items-center justify-center mb-4">
-                <ImageLightbox
-                    src="/img/Proposal-01.webp" 
-                    alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-contain"
-                  />
+                <ImageCarousel
+                  images={nycParksPlanImages}
+                  className="w-full h-full"
+                />
               </div>
               <div className="text-center">
                 <Button variant="outline" size="sm" asChild>
@@ -109,13 +154,12 @@ export default function IssuePage() {
             <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
               <div className="aspect-video bg-gradient-to-br from-green-200 to-green-400 rounded-lg flex items-center justify-center mb-4">
-                <ImageLightbox
-                    src="/img/Counter-proposal-01.webp" 
-                    alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-contain"
-                  />
+                <ImageCarousel
+                  images={counterProposalImages}
+                  className="w-full h-full"
+                  autoPlay={true}
+                  interval={4000}
+                />
               </div>
               <div className="text-center">
                 <Button variant="outline" size="sm" asChild>
