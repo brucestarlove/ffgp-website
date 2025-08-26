@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Calendar, ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight } from "lucide-react"
+import { ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
+import { decodeHtmlEntities } from "@/lib/utils"
 
 type NewsCategory = "legal" | "media" | "community" | "update"
 
@@ -102,7 +103,7 @@ export default function NewsPage() {
                 </h3>
                 
                 <div className="text-muted-foreground leading-relaxed">
-                  {featuredStory.excerpt.split('\n').map((line, index) => (
+                  {decodeHtmlEntities(featuredStory.excerpt).split('\n').map((line, index) => (
                     <p key={index} className={index > 0 ? 'mt-2' : ''}>
                       {line}
                     </p>
@@ -153,7 +154,7 @@ export default function NewsPage() {
                       </h4>
                       
                       <div className="text-sm text-muted-foreground mb-4">
-                        {story.excerpt.split('\n').map((line, index) => (
+                        {decodeHtmlEntities(story.excerpt).split('\n').map((line, index) => (
                           <p key={index} className={`${index > 0 ? 'mt-2' : ''} line-clamp-3`}>
                             {line}
                           </p>
@@ -275,7 +276,7 @@ export default function NewsPage() {
                         </CardHeader>
                         <CardContent>
                           <div className="text-muted-foreground mb-4">
-                            {item.excerpt.split('\n').map((line, index) => (
+                            {decodeHtmlEntities(item.excerpt).split('\n').map((line, index) => (
                               <p key={index} className={index > 0 ? 'mt-2' : ''}>
                                 {line}
                               </p>

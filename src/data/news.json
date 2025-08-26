@@ -3,10 +3,11 @@
     "id": "1",
     "date": "2025-07-15",
     "title": "Judge Dismisses Lawsuit, Allows Tree Removal",
-    "excerpt": "On Friday, July 18, 2025, members of FFGP spoke with Brooklyn News 12 to voice their disappointment in the ruling. “This decision represents a setback not only for Fort Greene Park but for all New Yorkers who believe in protecting our city’s green spaces and honoring our shared historical and cultural heritage,” said FFGP President Kelly Schaffer.\nDespite the court’s decision, the group emphasized that their fight is far from over. FFGP vowed to continue mobilizing neighbors, raising awareness, and pressing city officials to adopt the community’s counter-proposal — one that preserves the tree canopy, restores historic landscape features, and ensures the park remains accessible, sustainable, and welcoming for future generations.",
+    "excerpt": "On Friday, July 18, 2025, members of FFGP spoke with Brooklyn News 12 to voice their disappointment in the ruling. &quot;This decision represents a setback not only for Fort Greene Park but for all New Yorkers who believe in protecting our city&apos;s green spaces and honoring our shared historical and cultural heritage,&quot; said FFGP President Kelly Schaffer.\nDespite the court&apos;s decision, the group emphasized that their fight is far from over. FFGP vowed to continue mobilizing neighbors, raising awareness, and pressing city officials to adopt the community&apos;s counter-proposal — one that preserves the tree canopy, restores historic landscape features, and ensures the park remains accessible, sustainable, and welcoming for future generations.",
     "category": "legal",
     "source": "News 12",
-    "sourceUrl": "https://brooklyn.news12.com/judge-tosses-lawsuit-over-fort-greene-park-allowing-city-to-cut-down-trees "
+    "sourceUrl": "https://brooklyn.news12.com/judge-tosses-lawsuit-over-fort-greene-park-allowing-city-to-cut-down-trees ",
+    "author": "Staff Reporter"
   },
   {
     "id": "2", 
@@ -15,7 +16,8 @@
     "excerpt": "FFGP met with Parks Commissioner Sue Donoghue, who confirmed the department's eagerness to move ahead despite opposition.",
     "category": "community",
     "source": "FFGP",
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "author": "Kelly Schaffer"
   },
   {
     "id": "3",
@@ -24,7 +26,8 @@
     "excerpt": "Brooklyn Paper reports that residents demanded answers and that Parks Commissioner Mitchell Silver was forcing through the unpopular plan.",
     "category": "media",
     "source": "Brooklyn Paper",
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "author": "Kevin Duggan"
   },
   {
     "id": "4",
@@ -33,7 +36,8 @@
     "excerpt": "Kings County Politics reports that residents came together and prevailed in court, resulting in a temporary halt to tree removal.",
     "category": "legal",
     "source": "Kings County Politics", 
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "author": "Staff Reporter"
   },
   {
     "id": "5",
@@ -42,15 +46,17 @@
     "excerpt": "Assemblyman Walter Mosley argued that trees with longevity should not be replaced by immature saplings and warned the plan could spur gentrification.",
     "category": "community",
     "source": "Brooklyn Paper",
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "author": "Rose Adams"
   },
   {
     "id": "6",
     "date": "2017-09-12",
     "title": "Landmarks Commission Criticizes Parks Without Borders Design",
-    "excerpt": "During a 2017 hearing, LPC commissioners criticized the Parks Without Borders design as 'antithetical' to Olmsted's vision and 'not very friendly' for gatherings.",
+    "excerpt": "During a 2017 hearing, LPC commissioners criticized the Parks Without Borders design as &apos;antithetical&apos; to Olmsted&apos;s vision and &apos;not very friendly&apos; for gatherings.",
     "category": "legal",
     "source": "NYC LPC",
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "author": "LPC Staff"
   }
 ]

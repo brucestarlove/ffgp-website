@@ -1,12 +1,13 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, ChevronLeft } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
+import { decodeHtmlEntities } from "@/lib/utils"
 
 // News agency logos mapping
 const newsLogos: Record<string, string> = {
@@ -48,7 +49,7 @@ export default function AllNewsPage() {
               8 Years of News
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Complete timeline of media coverage and updates from our campaign to save Fort Greene Park&apos;s trees.
+              Media coverage and updates from our campaign to save Fort Greene Park&apos;s trees.
             </p>
           </div>
         </div>
@@ -68,20 +69,27 @@ export default function AllNewsPage() {
                   <div className="lg:col-span-1 space-y-4">
                     {/* News Agency Logo */}
                     <div className="flex items-center justify-start lg:justify-center">
-                      <div className="w-20 h-10 bg-gray-100 rounded flex items-center justify-center">
+                      <div className="w-48 h-24 flex items-center justify-center overflow-hidden">
                         {newsLogos[article.source] ? (
                           <Image
                             src={newsLogos[article.source]}
-                            alt={article.source}
-                            width={80}
-                            height={40}
-                            className="rounded"
+                            alt={`${article.source} logo`}
+                            width={190}
+                            height={96}
+                            className="object-contain rounded"
+                            onError={(e) => {
+                              // Fallback to text if image fails to load
+                              e.currentTarget.style.display = 'none'
+                              e.currentTarget.nextElementSibling!.style.display = 'block'
+                            }}
                           />
-                        ) : (
-                          <span className="text-xs font-medium text-muted-foreground text-center">
-                            {article.source}
-                          </span>
-                        )}
+                        ) : null}
+                        <span 
+                          className={`text-sm font-medium text-muted-foreground text-center px-2 ${newsLogos[article.source] ? 'hidden' : 'block'}`}
+                          style={{ display: newsLogos[article.source] ? 'none' : 'block' }}
+                        >
+                          {article.source}
+                        </span>
                       </div>
                     </div>
 
@@ -111,10 +119,10 @@ export default function AllNewsPage() {
                       )}
                     </div>
 
-                    {/* Author (placeholder for now) */}
+                    {/* Author */}
                     <div className="text-center lg:text-center">
                       <p className="text-xs text-muted-foreground">
-                        Staff Reporter
+                        {article.author || 'Staff Reporter'}
                       </p>
                     </div>
                   </div>
@@ -139,7 +147,7 @@ export default function AllNewsPage() {
 
                     {/* Excerpt */}
                     <div className="text-muted-foreground leading-relaxed">
-                      {article.excerpt.split('\n').map((line, index) => (
+                      {decodeHtmlEntities(article.excerpt).split('\n').map((line, index) => (
                         <p key={index} className={index > 0 ? 'mt-2' : ''}>
                           {line}
                         </p>
