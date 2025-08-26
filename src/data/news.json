@@ -7,56 +7,84 @@
     "category": "legal",
     "source": "News 12",
     "sourceUrl": "https://brooklyn.news12.com/judge-tosses-lawsuit-over-fort-greene-park-allowing-city-to-cut-down-trees ",
-    "author": "Staff Reporter"
+    "author": "Staff Reporter",
+    "containsVideo": true
   },
   {
-    "id": "2", 
-    "date": "2023-06-10",
-    "title": "Meeting with Parks Commissioner Sue Donoghue",
-    "excerpt": "FFGP met with Parks Commissioner Sue Donoghue, who confirmed the department's eagerness to move ahead despite opposition.",
-    "category": "community",
-    "source": "FFGP",
-    "sourceUrl": "#",
-    "author": "Kelly Schaffer"
+    "id": "7",
+    "date": "2025-04-12",
+    "title": "Advocates Battle NYC Parks Plan to Cut 78 Trees",
+    "excerpt": "The nonprofit Friends of Fort Greene Park says the NYC Parks Department failed to conduct a full environmental review before approving a $24 million redesign that would remove 78 mature trees. A March court hearing highlighted the group&apos;s argument that the Parks Department violated the State Environmental Quality Review Act (SEQRA) and withheld information. The plan, rooted in a 2017 &quot;Parks Without Borders&quot; proposal, initially targeted 58 healthy trees for a paved plaza and new entrance and has since grown in cost and scope. FFGP attorneys say tree removal will harm NYCHA residents who rely on shaded mounds for picnics and exercise, and argue that repairs like drainage improvement and ADA ramps could be done without cutting trees.",
+    "category": "legal",
+    "source": "BK Reader",
+    "sourceUrl": "https://www.bkreader.com/non-profit-community/advocates-battle-nyc-parks-plan-to-cut-78-trees-in-fort-greene-park-10498705",
+    "author": "BK Reader Staff",
+    "containsVideo": false
   },
   {
-    "id": "3",
-    "date": "2021-03-22",
-    "title": "Residents Demand Answers on Tree Removal Plan",
-    "excerpt": "Brooklyn Paper reports that residents demanded answers and that Parks Commissioner Mitchell Silver was forcing through the unpopular plan.",
+    "id": "8",
+    "date": "2025-03-31",
+    "title": "Brooklyn Residents Fight Plan to Chop Down 78 Trees",
+    "excerpt": "The New York Post reports that residents of Fort Greene are fighting NYC Parks&apos; plan to remove 78 healthy trees in the park. Opponents warn that paving over green space will increase heat and create a &apos;summer frying pan,&apos; arguing that cutting mature shade trees harms community health and the neighborhood&apos;s character. Supporters of the redesign claim it will improve accessibility and public safety.",
+    "category": "media",
+    "source": "New York Post",
+    "sourceUrl": "https://nypost.com/2025/03/31/us-news/locals-fight-plan-to-chop-down-78-healthy-trees-in-for-greene-park-saying-itll-create-a-summer-frying-pan/",
+    "author": "Nicole Rosenthal",
+    "containsVideo": false
+  },
+  {
+    "id": "9",
+    "date": "2025-04-15",
+    "title": "Advocates and City Continue Legal Battle Over Fort Greene Park Revamp",
+    "excerpt": "A Brooklyn Paper article chronicles the ongoing legal battle between advocates and NYC Parks over the Fort Greene Park revamp. Advocates say the $24 million redesign would cut down 78 trees without adequate environmental review, while the city contends that some trees are unhealthy or invasive and promises to plant native species. The piece notes that residents and organizations have sued to block the redesign and to compel a full environmental impact review.",
     "category": "media",
     "source": "Brooklyn Paper",
-    "sourceUrl": "#",
-    "author": "Kevin Duggan"
+    "sourceUrl": "https://www.brooklynpaper.com/legal-battle-trees-fort-greene-park/",
+    "author": "Kirstyn Brendlen",
+    "containsVideo": false
   },
   {
-    "id": "4",
-    "date": "2020-08-15",
-    "title": "Lawsuit Results in Stay of Execution for Trees",
-    "excerpt": "Kings County Politics reports that residents came together and prevailed in court, resulting in a temporary halt to tree removal.",
-    "category": "legal",
-    "source": "Kings County Politics", 
-    "sourceUrl": "#",
-    "author": "Staff Reporter"
+    "id": "10",
+    "date": "2025-04-03",
+    "title": "Long-Running Controversy Over Fort Greene Tree Plan Continues",
+    "excerpt": "The Brooklyn Daily Eagle reports that the controversy over a $24 million redesign of Fort Greene Park—which will axe 78 mature trees—continues. The plan would swap invasive Norway maples for 200 native trees, add ADA entrances and improve drainage, according to the park&apos;s Conservancy, which says many trees are unhealthy or invasive. Friends of Fort Greene Park argues the redesign skipped environmental reviews, decreases shade, replaces green space with concrete and destroys park features, and notes that lawsuits against the plan date back to 2019.",
+    "category": "media",
+    "source": "Brooklyn Daily Eagle",
+    "sourceUrl": "https://brooklyneagle.com/articles/2025/04/03/long-running-controversy-over-fort-greene-tree-plan-continues/",
+    "author": "Brooklyn Eagle Staff",
+    "containsVideo": false
   },
   {
-    "id": "5",
-    "date": "2019-11-30",
-    "title": "Assemblyman Warns Against Tree Replacement Plan",
-    "excerpt": "Assemblyman Walter Mosley argued that trees with longevity should not be replaced by immature saplings and warned the plan could spur gentrification.",
-    "category": "community",
-    "source": "Brooklyn Paper",
-    "sourceUrl": "#",
-    "author": "Rose Adams"
+    "id": "11",
+    "date": "2025-03-27",
+    "title": "'Tree Fight' Continues to Grow in Brooklyn",
+    "excerpt": "A CBS News New York segment titled &quot;Tree fight&quot; continues to grow in Brooklyn reports that two organizations hoping to make improvements to Fort Greene Park have been arguing for decades and that the fight has moved to the courts. The piece features video interviews with residents and advocates, highlighting the long-running dispute over plans to cut down 78 mature trees and remodel the park for a $24 million redesign.",
+    "category": "media",
+    "source": "CBS News",
+    "sourceUrl": "https://www.cbsnews.com/newyork/video/tree-fight-continues-to-grow-in-brooklyn/",
+    "author": "Kristie Keleshian",
+    "containsVideo": true
   },
   {
-    "id": "6",
-    "date": "2017-09-12",
-    "title": "Landmarks Commission Criticizes Parks Without Borders Design",
-    "excerpt": "During a 2017 hearing, LPC commissioners criticized the Parks Without Borders design as &apos;antithetical&apos; to Olmsted&apos;s vision and &apos;not very friendly&apos; for gatherings.",
-    "category": "legal",
-    "source": "NYC LPC",
-    "sourceUrl": "#",
-    "author": "LPC Staff"
+    "id": "12",
+    "date": "2025-04-01",
+    "title": "Residents Sue to Stop Tree Cutting in $24M Fort Greene Park Overhaul",
+    "excerpt": "FOX5 New York reports that a $24 million project to redesign Fort Greene Park faces legal opposition from local residents. The plan calls for the removal of 78 trees to make way for pedestrian plazas and increased accessibility, but opponents say the project will harm the environment and community health. Residents filed a lawsuit arguing that tree loss will impact air quality, wildlife and shade in a neighborhood already affected by asthma and heat.",
+    "category": "media",
+    "source": "FOX5 New York",
+    "sourceUrl": "https://www.youtube.com/watch?v=6y5V3RM7AgM",
+    "author": "Kendall Green",
+    "containsVideo": true
+  },
+  {
+    "id": "13",
+    "date": "2025-05-14",
+    "title": "'Living for the City' Discusses Fort Greene Park Controversy",
+    "excerpt": "During WBAI Radio&apos;s &quot;Living for the City&quot; program on May 14, 2025, hosts discussed Mt. Prospect Park and Fort Greene Park, explaining the issues surrounding NYC Parks&apos; plan to remove 78 mature trees and redesign the park. The segment provided background on the decades-long fight, the lawsuits and the community counter-proposal to preserve trees, restore historic features and improve accessibility without extensive tree removal.",
+    "category": "media",
+    "source": "WBAI Radio",
+    "sourceUrl": "https://www.google.com",
+    "author": "WBAI Radio",
+    "containsVideo": false
   }
 ]

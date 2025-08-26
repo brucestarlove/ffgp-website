@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, ChevronLeft } from "lucide-react"
+import { ExternalLink, ChevronLeft, Play } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
 import { decodeHtmlEntities } from "@/lib/utils"
@@ -14,6 +14,13 @@ const newsLogos: Record<string, string> = {
   "News 12": "/img/logo-news12.jpg",
   "Brooklyn Paper": "/img/logo-brooklyn_paper.png",
   "Kings County Politics": "/img/logo-kingscountypolitics.jpg",
+  "WBAI Radio": "/img/logo-wbai.png",
+  "FOX5 New York": "/img/logo-fox5.png",
+  "CBS News": "/img/logo-cbs.jpg",
+  "BK Reader": "/img/logo-bkr.jpg",
+  // "New York Post": "/img/logo-nyp",
+   "Brooklyn Daily Eagle": "/img/logo-brooklyn_daily_eagle.jpg",
+   
 }
 
 export default function AllNewsPage() {
@@ -63,12 +70,12 @@ export default function AllNewsPage() {
               {visibleNews.map((article, index) => (
                 <article 
                   key={article.id} 
-                  className="grid grid-cols-1 lg:grid-cols-4 gap-6 py-6 border-b border-border last:border-b-0"
+                  className="grid grid-cols-1 md:grid-cols-4 gap-6 py-6 border-b border-border last:border-b-0"
                 >
                   {/* Left Column: Logo, Date, Author */}
-                  <div className="lg:col-span-1 space-y-4">
+                  <div className="md:col-span-1 space-y-4">
                     {/* News Agency Logo */}
-                    <div className="flex items-center justify-start lg:justify-center">
+                    <div className="flex items-center justify-center">
                       <div className="w-48 h-24 flex items-center justify-center overflow-hidden">
                         {newsLogos[article.source] ? (
                           <Image
@@ -94,7 +101,7 @@ export default function AllNewsPage() {
                     </div>
 
                     {/* Date */}
-                    <div className="text-center lg:text-center">
+                    <div className="text-center md:text-center">
                       {article.sourceUrl && article.sourceUrl !== '#' ? (
                         <Link 
                           href={article.sourceUrl}
@@ -120,7 +127,7 @@ export default function AllNewsPage() {
                     </div>
 
                     {/* Author */}
-                    <div className="text-center lg:text-center">
+                    <div className="text-center md:text-center">
                       <p className="text-xs text-muted-foreground">
                         {article.author || 'Staff Reporter'}
                       </p>
@@ -128,22 +135,30 @@ export default function AllNewsPage() {
                   </div>
 
                   {/* Right Column: Title and Excerpt */}
-                  <div className="lg:col-span-3 space-y-3">
+                  <div className="md:col-span-3 space-y-3">
                     {/* Title */}
-                    <h2 className="text-xl font-semibold text-foreground leading-tight">
-                      {article.sourceUrl && article.sourceUrl !== '#' ? (
-                        <Link 
-                          href={article.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary transition-colors"
-                        >
-                          {article.title}
-                        </Link>
-                      ) : (
-                        article.title
+                    <div className="flex items-start justify-between gap-3">
+                      <h2 className="text-xl font-semibold text-foreground leading-tight flex-1">
+                        {article.sourceUrl && article.sourceUrl !== '#' ? (
+                          <Link 
+                            href={article.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-primary transition-colors"
+                          >
+                            {article.title}
+                          </Link>
+                        ) : (
+                          article.title
+                        )}
+                      </h2>
+                      {article.containsVideo && (
+                        <div className="flex items-center gap-1 bg-red-100 text-red-700 px-2 py-1 rounded-full text-sm font-medium flex-shrink-0">
+                          <Play className="h-3 w-3 fill-current" />
+                          <span>Video</span>
+                        </div>
                       )}
-                    </h2>
+                    </div>
 
                     {/* Excerpt */}
                     <div className="text-muted-foreground leading-relaxed">
@@ -163,7 +178,7 @@ export default function AllNewsPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
                         >
-                          Read full article
+                          {article.containsVideo ? 'Watch the video' : 'Read full article'}
                           <ExternalLink className="h-3 w-3" />
                         </Link>
                       </div>

@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight } from "lucide-react"
+import { ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight, Play } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
 import { decodeHtmlEntities } from "@/lib/utils"
@@ -98,9 +98,17 @@ export default function NewsPage() {
                   </time>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-foreground leading-tight">
-                  {featuredStory.title}
-                </h3>
+                <div className="flex items-start gap-3">
+                  <h3 className="text-2xl font-bold text-foreground leading-tight flex-1">
+                    {featuredStory.title}
+                  </h3>
+                  {featuredStory.containsVideo && (
+                    <div className="flex items-center gap-1 bg-red-100 text-red-700 px-2 py-1 rounded-full text-sm font-medium mt-1">
+                      <Play className="h-3 w-3 fill-current" />
+                      <span>Video</span>
+                    </div>
+                  )}
+                </div>
                 
                 <div className="text-muted-foreground leading-relaxed">
                   {decodeHtmlEntities(featuredStory.excerpt).split('\n').map((line, index) => (
@@ -118,7 +126,7 @@ export default function NewsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2"
                     >
-                      Read Full Article
+                      {featuredStory.containsVideo ? 'Watch the Video' : 'Read Full Article'}
                       <ExternalLink className="h-4 w-4" />
                     </Link>
                   </Button>
@@ -149,9 +157,17 @@ export default function NewsPage() {
                         </time>
                       </div>
                       
-                      <h4 className="font-semibold text-foreground mb-2 line-clamp-2">
-                        {story.title}
-                      </h4>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h4 className="font-semibold text-foreground line-clamp-2 flex-1">
+                          {story.title}
+                        </h4>
+                        {story.containsVideo && (
+                          <div className="flex items-center gap-1 bg-red-100 text-red-700 px-1.5 py-0.5 rounded text-xs font-medium flex-shrink-0">
+                            <Play className="h-2.5 w-2.5 fill-current" />
+                            <span>Video</span>
+                          </div>
+                        )}
+                      </div>
                       
                       <div className="text-sm text-muted-foreground mb-4">
                         {decodeHtmlEntities(story.excerpt).split('\n').map((line, index) => (
@@ -168,7 +184,7 @@ export default function NewsPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
                         >
-                          Read more
+                          {story.containsVideo ? 'Watch video' : 'Read more'}
                           <ExternalLink className="h-3 w-3" />
                         </Link>
                       )}
@@ -272,7 +288,15 @@ export default function NewsPage() {
                               })}
                             </time>
                           </div>
-                          <CardTitle className="text-xl">{item.title}</CardTitle>
+                          <div className="flex items-start justify-between gap-3">
+                            <CardTitle className="text-xl flex-1">{item.title}</CardTitle>
+                            {item.containsVideo && (
+                              <div className="flex items-center gap-1 bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-medium flex-shrink-0">
+                                <Play className="h-3 w-3 fill-current" />
+                                <span>Video</span>
+                              </div>
+                            )}
+                          </div>
                         </CardHeader>
                         <CardContent>
                           <div className="text-muted-foreground mb-4">
