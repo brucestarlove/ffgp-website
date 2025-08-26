@@ -14,3 +14,10 @@ export function decodeHtmlEntities(text: string): string {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
 }
+
+// Helper function to parse date consistently (avoids timezone issues)
+export function parseDate(dateString: string): Date {
+  // Parse as UTC date to avoid timezone offset issues
+  const [year, month, day] = dateString.split('-').map(Number)
+  return new Date(year, month - 1, day) // month is 0-indexed
+}

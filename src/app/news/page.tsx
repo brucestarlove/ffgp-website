@@ -1,24 +1,15 @@
-import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight, Play } from "lucide-react"
+import { ExternalLink, ArrowRight, Play, Scale, Users, AlertTriangle } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
-import { decodeHtmlEntities } from "@/lib/utils"
+import { decodeHtmlEntities, parseDate } from "@/lib/utils"
 
-type NewsCategory = "legal" | "media" | "community" | "update"
-
-const categoryConfig: Record<NewsCategory, { icon: any; label: string; color: string }> = {
-  legal: { icon: Scale, label: "Legal", color: "text-blue-600" },
-  media: { icon: FileText, label: "Media", color: "text-green-600" },
-  community: { icon: Users, label: "Community", color: "text-purple-600" },
-  update: { icon: AlertTriangle, label: "Update", color: "text-orange-600" }
-}
 
 export default function NewsPage() {
-  const sortedNews = [...newsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const sortedNews = [...newsData].sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
   const featuredStory = sortedNews[0]
   const recentStories = sortedNews.slice(1, 4)
 
@@ -83,21 +74,6 @@ export default function NewsPage() {
               
               {/* Right: Content */}
               <div className="flex flex-col justify-center space-y-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <div className={`flex items-center gap-2 ${categoryConfig[featuredStory.category as NewsCategory].color}`}>
-                    {React.createElement(categoryConfig[featuredStory.category as NewsCategory].icon, { className: "h-4 w-4" })}
-                    <span>{categoryConfig[featuredStory.category as NewsCategory].label}</span>
-                  </div>
-                  <span>•</span>
-                  <time>
-                    {new Date(featuredStory.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </time>
-                </div>
-                
                 <div className="flex items-start gap-3">
                   <h3 className="text-2xl font-bold text-foreground leading-tight flex-1">
                     {featuredStory.title}
@@ -108,6 +84,16 @@ export default function NewsPage() {
                       <span>Video</span>
                     </div>
                   )}
+                </div>
+                
+                <div className="text-sm text-muted-foreground">
+                  <time>
+                    {parseDate(featuredStory.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
                 </div>
                 
                 <div className="text-muted-foreground leading-relaxed">
@@ -140,16 +126,12 @@ export default function NewsPage() {
             <h3 className="text-2xl font-semibold text-foreground">Recent Updates</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recentStories.map((story) => {
-                const config = categoryConfig[story.category as NewsCategory]
                 return (
                   <Card key={story.id} className="hover:shadow-md transition-shadow">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                        {React.createElement(config.icon, { className: `h-4 w-4 ${config.color}` })}
-                        <span className={config.color}>{config.label}</span>
-                        <span>•</span>
                         <time>
-                          {new Date(story.date).toLocaleDateString('en-US', { 
+                          {parseDate(story.date).toLocaleDateString('en-US', { 
                             month: 'short', 
                             day: 'numeric',
                             year: 'numeric'
@@ -261,8 +243,6 @@ export default function NewsPage() {
 
             <div className="space-y-8">
               {sortedNews.map((item, index) => {
-                const config = categoryConfig[item.category as NewsCategory]
-                const IconComponent = config.icon
                 const isEven = index % 2 === 0
 
                 return (
@@ -275,13 +255,8 @@ export default function NewsPage() {
                       <Card>
                         <CardHeader>
                           <div className={`flex items-center gap-2 ${isEven ? 'md:justify-end' : ''}`}>
-                            <IconComponent className={`h-5 w-5 ${config.color}`} />
-                            <span className={`text-sm font-medium ${config.color}`}>
-                              {config.label}
-                            </span>
-                            <span className="text-sm text-muted-foreground">•</span>
                             <time className="text-sm text-muted-foreground">
-                              {new Date(item.date).toLocaleDateString('en-US', { 
+                              {parseDate(item.date).toLocaleDateString('en-US', { 
                                 year: 'numeric', 
                                 month: 'long', 
                                 day: 'numeric' 

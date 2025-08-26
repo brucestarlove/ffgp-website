@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, ChevronLeft, Play } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
-import { decodeHtmlEntities } from "@/lib/utils"
+import { decodeHtmlEntities, parseDate } from "@/lib/utils"
 
 // News agency logos mapping
 const newsLogos: Record<string, string> = {
@@ -16,18 +16,17 @@ const newsLogos: Record<string, string> = {
   "Kings County Politics": "/img/logo-kingscountypolitics.jpg",
   "WBAI Radio": "/img/logo-wbai.png",
   "FOX5 New York": "/img/logo-fox5.png",
-  "CBS News": "/img/logo-cbs.jpg",
+  "CBS News": "/img/logo-cbs.png",
   "BK Reader": "/img/logo-bkr.jpg",
-  // "New York Post": "/img/logo-nyp",
+  "New York Post": "/img/logo-nyp.png",
    "Brooklyn Daily Eagle": "/img/logo-brooklyn_daily_eagle.jpg",
-   
 }
 
 export default function AllNewsPage() {
   const [displayedItems, setDisplayedItems] = useState(20)
   const [isLoading, setIsLoading] = useState(false)
   
-  const sortedNews = [...newsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const sortedNews = [...newsData].sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
   const visibleNews = sortedNews.slice(0, displayedItems)
   const hasMore = displayedItems < sortedNews.length
 
@@ -109,7 +108,7 @@ export default function AllNewsPage() {
                           rel="noopener noreferrer"
                           className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
-                          {new Date(article.date).toLocaleDateString('en-US', {
+                          {parseDate(article.date).toLocaleDateString('en-US', {
                             month: 'short',
                             day: 'numeric',
                             year: 'numeric'
@@ -117,7 +116,7 @@ export default function AllNewsPage() {
                         </Link>
                       ) : (
                         <time className="text-sm font-medium text-muted-foreground">
-                          {new Date(article.date).toLocaleDateString('en-US', {
+                          {parseDate(article.date).toLocaleDateString('en-US', {
                             month: 'short',
                             day: 'numeric',
                             year: 'numeric'
