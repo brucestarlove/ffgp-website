@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageLightbox } from "@/components/image-lightbox"
@@ -64,9 +65,11 @@ export function ImageCarousel({
           width={images[0].width}
           height={images[0].height}
         >
-          <img
+          <Image
             src={images[0].src}
             alt={images[0].alt}
+            width={images[0].width}
+            height={images[0].height}
             className="w-full h-full object-contain"
           />
         </ImageLightbox>
@@ -89,9 +92,11 @@ export function ImageCarousel({
             width={images[currentIndex].width}
             height={images[currentIndex].height}
           >
-            <img
+            <Image
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
+              width={images[currentIndex].width}
+              height={images[currentIndex].height}
               className="w-full h-full object-contain transition-all duration-300"
             />
           </ImageLightbox>

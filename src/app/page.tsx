@@ -179,7 +179,7 @@ export default function Home() {
               Voices from the Community
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear directly from neighbors, families, and experts about why Fort Greene Park's trees matter.
+              Hear directly from neighbors, families, and experts about why Fort Greene Park&apos;s trees matter.
             </p>
           </div>
           <VideoGallery />
