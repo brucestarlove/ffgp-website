@@ -59,14 +59,14 @@ export default function NewsPage() {
               <CardContent className="p-6 text-center">
                 <Calendar className="h-8 w-8 mx-auto text-primary mb-3" />
                 <h3 className="text-2xl font-bold text-foreground mb-1">8 Years</h3>
-                <p className="text-sm text-muted-foreground">Campaign Duration</p>
+                <p className="text-sm text-muted-foreground">Protesting for Better</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 text-center">
-                <Scale className="h-8 w-8 mx-auto text-blue-600 mb-3" />
-                <h3 className="text-2xl font-bold text-foreground mb-1">Multiple</h3>
-                <p className="text-sm text-muted-foreground">Legal Challenges</p>
+                <Users className="h-8 w-8 mx-auto text-purple-600 mb-3" />
+                <h3 className="text-2xl font-bold text-foreground mb-1">Thousands</h3>
+                <p className="text-sm text-muted-foreground">Community Supporters</p>
               </CardContent>
             </Card>
             <Card>
@@ -78,9 +78,9 @@ export default function NewsPage() {
             </Card>
             <Card>
               <CardContent className="p-6 text-center">
-                <Users className="h-8 w-8 mx-auto text-purple-600 mb-3" />
-                <h3 className="text-2xl font-bold text-foreground mb-1">Thousands</h3>
-                <p className="text-sm text-muted-foreground">Community Supporters</p>
+                <Scale className="h-8 w-8 mx-auto text-blue-600 mb-3" />
+                <h3 className="text-2xl font-bold text-foreground mb-1">Multiple</h3>
+                <p className="text-sm text-muted-foreground">Legal Challenges</p>
               </CardContent>
             </Card>
           </div>
@@ -202,7 +202,7 @@ export default function NewsPage() {
               <CardContent>
                 <p className="text-muted-foreground">
                   Residents come together and prevail in court, resulting in a temporary stay of execution 
-                  for the trees. Community organizing reaches new heights.
+                  for the trees.
                 </p>
               </CardContent>
             </Card>
@@ -216,8 +216,9 @@ export default function NewsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Despite setback with lawsuit dismissal, FFGP continues the fight through advocacy, 
-                  community organizing, and exploring alternative legal strategies.
+                  Despite the lawsuit dismissal, FFGP continues the fight with new volunteer assistance 
+                  to spread awareness as quickly as possible to all neighbors and plea for the last time 
+                  for counter-proposal acceptance.
                 </p>
               </CardContent>
             </Card>
@@ -233,7 +234,7 @@ export default function NewsPage() {
               Stay Informed & Take Action
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The fight continues. Join our mailing list for updates and take action to save our trees.
+              We need your help NOW. Join our mailing list for updates, join us in the park, and take action to save our trees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">

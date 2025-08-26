@@ -132,6 +132,99 @@ export default function IssuePage() {
             </p>
           </div>
 
+          {/* The Plan vs Counter-Proposal */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <Card className="border-destructive/20">
+              <CardHeader>
+                <CardTitle className="text-destructive text-2xl">The issues within NYC Parks&apos; Plan</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <TreePine className="h-5 w-5 text-destructive" />
+                  <span>Remove 78 mature trees across the park, lying about tree health to justify removal</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Building2 className="h-5 w-5 text-destructive" />
+                  <span>Pave 13,000+ sq ft of open lawn with concrete</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-destructive text-lg">💰</span>
+                  <span>$10+ million cost + $850,000+ for replacement trees</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-destructive text-lg">🔊</span>
+                  <span>Entrance moved to corner, removing the beloved Honey Locust trees and polluting the park with sight and sound from the city</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-destructive text-lg">👁️</span>
+                  <span>Pruning tree canopy just for view of the monument</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-destructive text-lg">🌱</span>
+                  <span>Plant 3-inch-caliper saplings as &quot;restitution&quot;, removing shade for decades</span>
+                </div>
+                <div className="flex items-start gap-3 pt-4 border-t border-muted">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">♿</span>
+                  <div>
+                    <div className="font-medium text-primary">We do support making the park more accessible</div>
+                    <div className="text-sm text-muted-foreground">We want ADA-compliant ramps and accessible paving so neighbors of all ages and abilities can enjoy the park equally — we just want to preserve the shade and soul of the park.</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">💧</span>
+                  <div>
+                    <div className="font-medium text-primary">We do support improving drainage &amp; resilience</div>
+                    <div className="text-sm text-muted-foreground">We want to rebuild paths, strengthen retaining walls, add rain gardens, and reduce oversized plazas to prevent flooding — we just want to preserve the shade and soul of the park.</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-primary text-2xl">Community Counter-Proposal</CardTitle>
+                <p className="text-muted-foreground mt-2 font-semibold">Preserve, Restore, Enhance</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <TreePine className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium text-primary">Preserve Mature Trees</div>
+                    <div className="text-sm text-muted-foreground">Protect and selectively prune the park&apos;s 78 mature shade trees, replacing only for true safety or health needs.</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">🏔️</span>
+                  <div>
+                    <div className="font-medium text-primary">Restore Historic Landscape</div>
+                    <div className="text-sm text-muted-foreground">Repair masonry walls, bring back A.E. Bye&apos;s natural mounds, and keep the park&apos;s unique circular plaza and classic benches.</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">🪨</span>
+                  <div>
+                    <div className="font-medium text-primary">Protect Historic Materials</div>
+                    <div className="text-sm text-muted-foreground">Retain pink granite blocks, expand green planting circles, and reject unnecessary new concrete, fencing, or tinted pavers.</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">🏀</span>
+                  <div>
+                    <div className="font-medium text-primary">Improve Existing Human Facilities</div>
+                    <div className="text-sm text-muted-foreground">Enhance the playground, basketball court, BBQ area, restrooms, and sprinklers to better serve the community.</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-lg mt-0.5 flex-shrink-0">🌱</span>
+                  <div>
+                    <div className="font-medium text-primary">Keep a Human-Scale Neighborhood Park</div>
+                    <div className="text-sm text-muted-foreground">Prioritize green space over hardscape, ensuring the park stays welcoming, intimate, and community-driven.</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Before/After Visual */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
@@ -165,7 +258,7 @@ export default function IssuePage() {
               </div>
               <div className="text-center">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/pdfs/Friends of Fort Greene Park on PWB Redesign 03.19.18.pdf" target="_blank">
+                  <Link href="/pdfs/Counter_Proposal by Friends of FGP.pdf" target="_blank">
                     View Full Counter-Proposal (PDF)
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -173,8 +266,18 @@ export default function IssuePage() {
               </div>
             </div>
           </div>
+
+          <div className="text-center">
+              <Button variant="outline" size="sm" asChild>
+                <Link href="/pdfs/Friends of Fort Greene Park on PWB Redesign 03.19.18.pdf" target="_blank">
+                View More Proposal Comparisons (2018) (PDF)
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+          </div>
         </div>
       </section>
+
 
       {/* Detailed Benefits */}
       <section id="benefits" className="py-16 lg:py-24">
@@ -193,16 +296,16 @@ export default function IssuePage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
-                    <span className="text-2xl">🏛️</span>
-                    Restore Historic Landscape Features
+                    <span className="text-2xl">🌳</span>
+                    Restore the Park&apos;s Original Beauty
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Repair masonry walls</li>
-                    <li>• Restore landscape mounds</li>
-                    <li>• Rebuild circular plaza</li>
-                    <li>• Restore hierarchy of historically appropriate benches</li>
+                    <li>• Repair stone walls and pathways that have stood for generations</li>
+                    <li>• Maintain the gentle landscape mounds that kids and families love</li>
+                    <li>• Rebuild the circular plaza as a true gathering space</li>
+                    <li>• Keep the park&apos;s classic benches in the places they were meant to be</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -211,13 +314,13 @@ export default function IssuePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <span className="text-2xl">♿</span>
-                    Implement ADA Compliance
+                    Make the Park Accessible for Everyone
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Install accessible ramps at stairs, providing equal access for all</li>
-                    <li>• Install accessible granite block paving at benches</li>
+                    <li>• Add ramps at stairs so people of all ages and abilities can enjoy the park equally</li>
+                    <li>• Use paving materials that blend in naturally while being easy to navigate</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -226,16 +329,16 @@ export default function IssuePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <span className="text-2xl">🌧️</span>
-                    Upgrade Drainage Infrastructure
+                    Protect the Park from Flooding and Erosion
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Maintain/repair masonry perimeter retaining wall</li>
-                    <li>• Rebuild paths to control runoff</li>
-                    <li>• Reduce plaza width to minimize site runoff</li>
-                    <li>• Maintain/enhance granite block paving to absorb runoff</li>
-                    <li>• Maintain/enhance site plantings as rain gardens</li>
+                    <li>• Strengthen the retaining walls around the park&apos;s edge</li>
+                    <li>• Fix and rebuild paths to better handle rainwater</li>
+                    <li>• Narrow the oversized plaza so it doesn&apos;t create flooding</li>
+                    <li>• Use trees and granite paving to soak up runoff naturally</li>
+                    <li>• Add rain gardens that clean the water and make the park greener</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -246,14 +349,14 @@ export default function IssuePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <TreePine className="h-6 w-6" />
-                    Retain/Enhance Historic Tree Canopy
+                    Keep the Mature Tree Canopy
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Retain historic varieties of tree species</li>
-                    <li>• Replace trees as needed for risk management and tree health</li>
-                    <li>• Selectively prune mature trees</li>
+                    <li>• Preserve the historic mix of tree species that give the park its character</li>
+                    <li>• Replace trees only when truly necessary for safety or health</li>
+                    <li>• Care for and prune mature trees so they thrive for decades to come</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -262,18 +365,16 @@ export default function IssuePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <span className="text-2xl">🪨</span>
-                    Preserve Historic Paving/Reduce Concrete
+                    Limit Concrete, Keep It Green
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Minimize paving at circular plaza by expanding planting circle</li>
-                    <li>• Retain historic pink granite block paving at park perimeter</li>
-                    <li>• Reduce extent of concrete paving at barbecue areas</li>
+                    <li>• Shrink paved areas and enhance plant circle</li>
+                    <li>• Keep the historic pink granite that makes Fort Greene Park unique</li>
+                    <li>• Avoid adding unnecessary fencing or non-historic pavers</li>
                     <li>• Expand tree pits/enhance herbaceous ground cover</li>
-                    <li>• No fencing at tree pits</li>
-                    <li>• Reduce extraneous/non-historic decorative paving</li>
-                    <li>• No Jet Mist granite banding or tinted concrete pavers</li>
+                    <li>• No tinted concrete or industrial granite that doesn&apos;t belong in this historic park</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -282,84 +383,17 @@ export default function IssuePage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <span className="text-2xl">🏘️</span>
-                    Preserve Neighborhood Scale
+                    Maintain a Neighborhood Feel
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Retain or minimize width of plaza and park paths</li>
-                    <li>• Maintain human-scale proportions that encourage community use</li>
+                    <li>• Keep the park at a human scale — intimate, welcoming, and community-driven</li>
+                    <li>• Make sure gathering spaces encourage neighbors to come together, not pave them out</li>
                   </ul>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Plan vs Counter-Proposal */}
-      <section id="comparison" className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="border-destructive/20">
-              <CardHeader>
-                <CardTitle className="text-destructive text-2xl">NYC Parks&apos; Plan</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <TreePine className="h-5 w-5 text-destructive" />
-                  <span>Remove 78 mature trees across the park</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Building2 className="h-5 w-5 text-destructive" />
-                  <span>Pave 13,314 sq ft of open lawn with concrete</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-destructive text-lg">💰</span>
-                  <span>$10.5 million cost + $858,732 for replacement trees</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-destructive text-lg">👁️</span>
-                  <span>Create unobstructed monument view from Myrtle Avenue</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-destructive text-lg">🌱</span>
-                  <span>Plant 3-inch-caliper saplings as &quot;restitution&quot;</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-primary text-2xl">Community Counter-Proposal</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <TreePine className="h-5 w-5 text-primary" />
-                  <span>Preserve and selectively prune mature trees</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-lg">🔧</span>
-                  <span>Repair masonry walls and improve drainage</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-lg">♿</span>
-                  <span>Improve ADA access at existing entrances</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-lg">🪨</span>
-                  <span>Retain historic granite paving</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-lg">🏔️</span>
-                  <span>Restore A.E. Bye&apos;s naturalistic landscape mounds</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-lg">🔍</span>
-                  <span>Conduct full environmental review (SEQRA)</span>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

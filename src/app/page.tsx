@@ -98,7 +98,7 @@ export default function Home() {
                   <li>• Preserve all healthy mature trees</li>
                   <li>• Improve ADA accessibility</li>
                   <li>• Restore historic landscape features</li>
-                  <li>• Enhance drainage infrastructure</li>
+                  <li>• Upgrade playground, basketball court, restrooms and more</li>
                 </ul>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function Home() {
                 <Calendar className="h-12 w-12 mx-auto text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-4">Stay Updated</h3>
                 <p className="text-muted-foreground mb-6">
-                  Follow our 8-year campaign timeline and latest court developments.
+                  Follow our socials and mailing list for news and announcements on when we will meet in-person.
                 </p>
                 <Button variant="outline" asChild className="w-full">
                   <Link href="/news">View Timeline</Link>
@@ -232,7 +232,7 @@ export default function Home() {
                   Understand why preserving mature trees matters for climate resilience.
                 </p>
                 <Button variant="outline" asChild className="w-full">
-                  <Link href="/better-plan">Read More</Link>
+                  <Link href="/better-plan#trees-matter">Read More</Link>
                 </Button>
               </CardContent>
             </Card>
