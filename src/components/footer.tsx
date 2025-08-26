@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Leaf, Facebook, Twitter, Instagram, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Twitter, Instagram, Mail, MapPin } from "lucide-react"
+import { CommunityHeader } from "@/components/community-header";
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -7,11 +9,18 @@ export function Footer() {
   return (
     <footer className="bg-muted/50 border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <CommunityHeader />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Mission */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Leaf className="h-8 w-8 text-primary" />
+              <Image 
+                src="/logo.jpg" 
+                alt="Friends of Fort Greene Park" 
+                width={32} 
+                height={32} 
+                className="rounded-full"
+              />
               <span className="text-xl font-bold text-foreground">FFGP</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">

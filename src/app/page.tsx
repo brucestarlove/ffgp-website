@@ -39,7 +39,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 text-center">
             <AlertTriangle className="h-5 w-5 text-destructive" />
             <p className="text-sm font-medium">
-              <strong>July 2025 Update:</strong> Judge dismissed our lawsuit - NYC Parks approved to cut down trees. 
+              <strong>July 2025 Update:</strong> Judge dismissed our lawsuit - NYC Parks approved to cut down trees. Time is running out. 
               <Link href="/news" className="underline ml-1">Stay informed →</Link>
             </p>
           </div>
