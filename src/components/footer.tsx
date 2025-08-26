@@ -21,7 +21,7 @@ export function Footer() {
                 height={32} 
                 className="rounded-full"
               />
-              <span className="text-xl font-bold text-foreground">FFGP</span>
+              <span className="text-xl font-bold text-foreground">Friends of Fort Greene Park</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Friends of Fort Greene Park is a 501(c)(3) non-profit supporting protection 

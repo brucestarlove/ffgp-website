@@ -10,10 +10,9 @@ import { Footer } from "@/components/footer"
 
 // News agency logos mapping
 const newsLogos: Record<string, string> = {
-  "News 12": "https://via.placeholder.com/80x40/1E40AF/ffffff?text=News+12",
-  "Brooklyn Paper": "https://via.placeholder.com/80x40/059669/ffffff?text=BP",
-  "Kings County Politics": "https://via.placeholder.com/80x40/DC2626/ffffff?text=KCP",
-  "FFGP": "https://via.placeholder.com/80x40/16A34A/ffffff?text=FFGP",
+  "News 12": "/img/logo-news12.jpg",
+  "Brooklyn Paper": "/img/logo-brooklyn_paper.png",
+  "Kings County Politics": "/img/logo-kingscountypolitics.jpg",
 }
 
 export default function AllNewsPage() {
@@ -139,9 +138,13 @@ export default function AllNewsPage() {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-muted-foreground leading-relaxed">
-                      {article.excerpt}
-                    </p>
+                    <div className="text-muted-foreground leading-relaxed">
+                      {article.excerpt.split('\n').map((line, index) => (
+                        <p key={index} className={index > 0 ? 'mt-2' : ''}>
+                          {line}
+                        </p>
+                      ))}
+                    </div>
 
                     {/* External Link */}
                     {article.sourceUrl && article.sourceUrl !== '#' && (

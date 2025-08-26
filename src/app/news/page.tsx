@@ -101,9 +101,13 @@ export default function NewsPage() {
                   {featuredStory.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
-                  {featuredStory.excerpt}
-                </p>
+                <div className="text-muted-foreground leading-relaxed">
+                  {featuredStory.excerpt.split('\n').map((line, index) => (
+                    <p key={index} className={index > 0 ? 'mt-2' : ''}>
+                      {line}
+                    </p>
+                  ))}
+                </div>
                 
                 {featuredStory.sourceUrl && featuredStory.sourceUrl !== '#' && (
                   <Button asChild variant="default" className="w-fit">
@@ -148,9 +152,13 @@ export default function NewsPage() {
                         {story.title}
                       </h4>
                       
-                      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
-                        {story.excerpt}
-                      </p>
+                      <div className="text-sm text-muted-foreground mb-4">
+                        {story.excerpt.split('\n').map((line, index) => (
+                          <p key={index} className={`${index > 0 ? 'mt-2' : ''} line-clamp-3`}>
+                            {line}
+                          </p>
+                        ))}
+                      </div>
                       
                       {story.sourceUrl && story.sourceUrl !== '#' && (
                         <Link 
@@ -266,9 +274,13 @@ export default function NewsPage() {
                           <CardTitle className="text-xl">{item.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground mb-4">
-                            {item.excerpt}
-                          </p>
+                          <div className="text-muted-foreground mb-4">
+                            {item.excerpt.split('\n').map((line, index) => (
+                              <p key={index} className={index > 0 ? 'mt-2' : ''}>
+                                {line}
+                              </p>
+                            ))}
+                          </div>
                           {item.source && (
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <span>Source: {item.source}</span>
