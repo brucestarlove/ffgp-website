@@ -1,7 +1,9 @@
+import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Calendar, ExternalLink, Scale, Users, FileText, AlertTriangle } from "lucide-react"
+import Image from "next/image"
+import { Calendar, ExternalLink, Scale, Users, FileText, AlertTriangle, ArrowRight } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
 
@@ -16,11 +18,13 @@ const categoryConfig: Record<NewsCategory, { icon: any; label: string; color: st
 
 export default function NewsPage() {
   const sortedNews = [...newsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const featuredStory = sortedNews[0]
+  const recentStories = sortedNews.slice(1, 4)
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-16 lg:py-24">
+      <section className="bg-gradient-to-b from-primary/10 to-background py-16 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -28,7 +32,7 @@ export default function NewsPage() {
               <span className="text-primary block">Timeline</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              Follow the 8-year campaign to save Fort Greene Park&apos;s trees through court decisions, 
+              Follow the 8-year long campaign to save Fort Greene Park&apos;s trees through court decisions, 
               media coverage, and community organizing.
             </p>
           </div>
@@ -36,7 +40,7 @@ export default function NewsPage() {
       </section>
 
       {/* Latest Update Banner */}
-      <section className="bg-destructive/10 border-y border-destructive/20 py-6">
+      {/* <section className="bg-destructive/10 border-y border-destructive/20 py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0" />
@@ -47,6 +51,133 @@ export default function NewsPage() {
                 FFGP vows to continue fighting through other means.
               </p>
             </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Featured Story */}
+      <section className="py-16 lg:py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* <div className="mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              Latest News
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Stay updated with the latest developments in our campaign.
+            </p>
+          </div> */}
+
+          {/* Featured Article */}
+          <Card className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6">
+              {/* Left: Screenshot/Image */}
+              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-600 rounded-lg flex items-center justify-center">
+              <Image 
+                src="/img/July2025-News12-Thumbnail.png" 
+                alt="News 12 screencap of Friends of Fort Greene Park Fighting Against Construction" 
+                width={990} 
+                height={470}
+              />
+              </div>
+              
+              {/* Right: Content */}
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className={`flex items-center gap-2 ${categoryConfig[featuredStory.category as NewsCategory].color}`}>
+                    {React.createElement(categoryConfig[featuredStory.category as NewsCategory].icon, { className: "h-4 w-4" })}
+                    <span>{categoryConfig[featuredStory.category as NewsCategory].label}</span>
+                  </div>
+                  <span>•</span>
+                  <time>
+                    {new Date(featuredStory.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground leading-tight">
+                  {featuredStory.title}
+                </h3>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  {featuredStory.excerpt}
+                </p>
+                
+                {featuredStory.sourceUrl && featuredStory.sourceUrl !== '#' && (
+                  <Button asChild variant="default" className="w-fit">
+                    <Link 
+                      href={featuredStory.sourceUrl} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2"
+                    >
+                      Read Full Article
+                      <ExternalLink className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </Card>
+
+          {/* Recent Stories Preview */}
+          <div className="space-y-6 mb-12">
+            <h3 className="text-2xl font-semibold text-foreground">Recent Updates</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {recentStories.map((story) => {
+                const config = categoryConfig[story.category as NewsCategory]
+                return (
+                  <Card key={story.id} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                        {React.createElement(config.icon, { className: `h-4 w-4 ${config.color}` })}
+                        <span className={config.color}>{config.label}</span>
+                        <span>•</span>
+                        <time>
+                          {new Date(story.date).toLocaleDateString('en-US', { 
+                            month: 'short', 
+                            day: 'numeric',
+                            year: 'numeric'
+                          })}
+                        </time>
+                      </div>
+                      
+                      <h4 className="font-semibold text-foreground mb-2 line-clamp-2">
+                        {story.title}
+                      </h4>
+                      
+                      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                        {story.excerpt}
+                      </p>
+                      
+                      {story.sourceUrl && story.sourceUrl !== '#' && (
+                        <Link 
+                          href={story.sourceUrl} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
+                        >
+                          Read more
+                          <ExternalLink className="h-3 w-3" />
+                        </Link>
+                      )}
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* View All News Link */}
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/news/all" className="inline-flex items-center gap-2">
+                View 8 Years of News
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
