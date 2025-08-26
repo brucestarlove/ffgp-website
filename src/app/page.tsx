@@ -70,7 +70,7 @@ export default function Home() {
                     alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
                     width={800}
                     height={450}
-                    className="w-full h-full object-contain"
+                    className="object-cover"
                   />
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">
@@ -91,7 +91,7 @@ export default function Home() {
                     alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
                     width={800}
                     height={450}
-                    className="w-full h-full object-contain"
+                    className="object-cover"
                   />
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-2">

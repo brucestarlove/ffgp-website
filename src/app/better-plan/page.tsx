@@ -140,6 +140,8 @@ export default function IssuePage() {
                 <ImageCarousel
                   images={nycParksPlanImages}
                   className="w-full h-full"
+                  autoPlay={true}
+                  interval={4000}
                 />
               </div>
               <div className="text-center">

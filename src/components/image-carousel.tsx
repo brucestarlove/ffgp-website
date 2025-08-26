@@ -70,7 +70,7 @@ export function ImageCarousel({
             alt={images[0].alt}
             width={images[0].width}
             height={images[0].height}
-            className="w-full h-full object-contain"
+            className="object-cover"
           />
         </ImageLightbox>
       </div>
@@ -97,7 +97,7 @@ export function ImageCarousel({
               alt={images[currentIndex].alt}
               width={images[currentIndex].width}
               height={images[currentIndex].height}
-              className="w-full h-full object-contain transition-all duration-300"
+              className="object-cover transition-all duration-300"
             />
           </ImageLightbox>
         </div>
