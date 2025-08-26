@@ -31,33 +31,14 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Latest Update Banner */}
-      {/* <section className="bg-destructive/10 border-y border-destructive/20 py-6">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0" />
-            <div>
-              <h3 className="font-semibold text-destructive">Latest Update - July 2025</h3>
-              <p className="text-sm text-muted-foreground">
-                Judge dismissed our lawsuit, allowing NYC Parks to proceed with tree removal. 
-                FFGP vows to continue fighting through other means.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Featured Story */}
       <section className="py-16 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* <div className="mb-12">
+          <div className="mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
               Latest News
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Stay updated with the latest developments in our campaign.
-            </p>
-          </div> */}
+          </div>
 
           {/* Featured Article */}
           <Card className="mb-16">
@@ -74,6 +55,16 @@ export default function NewsPage() {
               
               {/* Right: Content */}
               <div className="flex flex-col justify-center space-y-4">
+                <div className="text-sm text-muted-foreground">
+                  <time>
+                    {parseDate(featuredStory.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                </div>
+
                 <div className="flex items-start gap-3">
                   <h3 className="text-2xl font-bold text-foreground leading-tight flex-1">
                     {featuredStory.title}
@@ -84,16 +75,6 @@ export default function NewsPage() {
                       <span>Video</span>
                     </div>
                   )}
-                </div>
-                
-                <div className="text-sm text-muted-foreground">
-                  <time>
-                    {parseDate(featuredStory.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </time>
                 </div>
                 
                 <div className="text-muted-foreground leading-relaxed">
@@ -179,10 +160,10 @@ export default function NewsPage() {
 
           {/* View All News Link */}
           <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/news/all" className="inline-flex items-center gap-2">
+            <Button asChild variant="outline" size="xl">
+              <Link href="/news/all" className="inline-flex items-center">
                 View 8 Years of News
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight />
               </Link>
             </Button>
           </div>
