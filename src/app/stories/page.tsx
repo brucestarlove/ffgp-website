@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Quote, Users, Heart, ArrowRight } from "lucide-react"
 import testimonials from "@/data/testimonials.json"
 import { CommunityVoicesVideoGalleryPreview } from "@/components/community-voices-video-gallery-preview"
+import { FeaturedVideoCard } from "@/components/featured-video-card"
 
 export default function StoriesPage() {
   return (
@@ -27,6 +28,7 @@ export default function StoriesPage() {
 
       <section>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Video - Large */}
           <CommunityVoicesVideoGalleryPreview />
           <div className="text-center mt-12">
             <Link href="https://www.youtube.com/playlist?list=PLO9BkTDlJ_bBtUFaJIKb0RC-FcnRugt5v" target="_blank" rel="noopener noreferrer">
@@ -48,8 +50,18 @@ export default function StoriesPage() {
         </div>
       </section>
 
-      {/* Testimonials Grid */}
       <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <FeaturedVideoCard
+              title="2019 Rally with Speeches"
+              url="https://www.youtube.com/watch?v=gFX6d95ZXXo"
+              thumbnail="https://img.youtube.com/vi/gFX6d95ZXXo/maxresdefault.jpg"
+            />
+        </div>
+      </section>
+
+      {/* Testimonials Grid */}
+      {/* <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial) => (
@@ -74,7 +86,7 @@ export default function StoriesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Community Impact Stats */}
       <section className="bg-muted py-16 lg:py-24">
