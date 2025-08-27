@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Instagram, Mail, MapPin } from "lucide-react"
+import { Facebook, Instagram, Mail, MapPin, DollarSign, Users } from "lucide-react"
 import { CommunityHeader } from "@/components/community-header";
 
 export function Footer() {
@@ -112,7 +112,7 @@ export function Footer() {
           </div>
 
           {/* Connect & Contact */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h3 className="font-semibold text-foreground">Connect With Us</h3>
             <div className="space-y-3">
               <a 
@@ -123,12 +123,12 @@ export function Footer() {
                 Email Us
               </a>
             </div>
-            
-            <div className="pt-2">
-              <h4 className="text-sm font-medium text-foreground mb-3">Follow Our Campaign</h4>
+
+            <div className="space-y-2 pt-2">
+              <h3 className="font-semibold text-foreground">Follow The Campaign</h3>
               <div className="flex items-center gap-4">
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com/FriendsofFortGreenePark" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Follow us on Facebook"
                 >
@@ -136,15 +136,7 @@ export function Footer() {
                   <span className="text-sm">Facebook</span>
                 </a>
                 <a 
-                  href="#" 
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Follow us on Twitter"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="text-sm">Twitter</span>
-                </a>
-                <a 
-                  href="#" 
+                  href="https://www.instagram.com/friendsoffortgreenepark/" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Follow us on Instagram"
                 >
@@ -153,6 +145,34 @@ export function Footer() {
                 </a>
               </div>
             </div>
+
+            <div className="space-y-2 pt-2">
+              <h3 className="font-semibold text-foreground">Support Us</h3>
+              <div className="flex items-center gap-4">
+                <a 
+                  href="/action#support" 
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <DollarSign className="h-8 w-8 mx-auto text-primary mb-3" />
+                  DonorBox
+                </a>
+                <a 
+                  href="/action#support" 
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Users className="h-8 w-8 mx-auto text-primary mb-3" />
+                  GoFundMe
+                </a>
+                <a 
+                  href="/action#support" 
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span className="text-3xl mb-3 block">💳</span>
+                  Venmo or Zelle
+                </a>
+              </div>
+            </div>
+            
           </div>
         </div>
 

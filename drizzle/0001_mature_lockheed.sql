@@ -1,0 +1,1 @@
+ALTER TABLE "petition_signatures" DROP COLUMN "ip_address";

@@ -218,7 +218,7 @@ export default function Home() {
                   Follow our socials and mailing list for news and announcements on when we will meet in-person.
                 </p>
                 <Button variant="outline" asChild className="w-full">
-                  <Link href="/news">View Timeline</Link>
+                  <Link href="/news">View News</Link>
                 </Button>
               </CardContent>
             </Card>

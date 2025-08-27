@@ -1,0 +1,212 @@
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { FileText, CheckCircle } from "lucide-react"
+
+interface PetitionFormData {
+  name: string
+  email: string
+  zipCode: string
+  phone: string
+  message: string
+  keepInformed: boolean
+  addToFriendsList: boolean
+  contactToHelp: boolean
+}
+
+export function PetitionForm() {
+  const [formData, setFormData] = useState<PetitionFormData>({
+    name: "",
+    email: "",
+    zipCode: "",
+    phone: "",
+    message: "",
+    keepInformed: false,
+    addToFriendsList: false,
+    contactToHelp: false
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
+    
+    try {
+      const response = await fetch('/api/petition', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit petition')
+      }
+
+      setIsSubmitted(true)
+      setFormData({
+        name: "",
+        email: "",
+        zipCode: "",
+        phone: "",
+        message: "",
+        keepInformed: false,
+        addToFriendsList: false,
+        contactToHelp: false
+      })
+    } catch (err) {
+      setError('Failed to submit petition. Please try again.')
+      console.error('Error submitting petition:', err)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const updateField = (field: keyof PetitionFormData, value: string | boolean) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2 text-2xl">
+          <FileText className="h-6 w-6 text-primary" />
+          Sign the Petition
+        </CardTitle>
+        <p className="text-muted-foreground">
+          Add your voice among thousands of Brooklyn residents demanding NYC Parks preserve our trees.
+        </p>
+      </CardHeader>
+      <CardContent>
+        {isSubmitted ? (
+          <div className="text-center py-8">
+            <CheckCircle className="h-12 w-12 mx-auto text-green-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
+            <p className="text-muted-foreground">
+              Your signature has been added. Share this campaign with friends and family.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
+                {error}
+              </div>
+            )}
+            
+            <div>
+              <Label htmlFor="name" className="pb-2">Full Name *</Label>
+              <Input
+                id="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) => updateField('name', e.target.value)}
+                placeholder="Enter your full name"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="email" className="pb-2">Email Address *</Label>
+              <Input
+                id="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={(e) => updateField('email', e.target.value)}
+                placeholder="Enter your email"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="zipCode" className="pb-2">ZIP Code (Optional)</Label>
+              <Input
+                id="zipCode"
+                type="text"
+                value={formData.zipCode}
+                onChange={(e) => updateField('zipCode', e.target.value)}
+                placeholder="Your ZIP code"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="phone" className="pb-2">Phone Number (Optional)</Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => updateField('phone', e.target.value)}
+                placeholder="Your phone number"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="message" className="pb-2">Personal Message (Optional)</Label>
+              <Textarea
+                id="message"
+                value={formData.message}
+                onChange={(e) => updateField('message', e.target.value)}
+                placeholder="Share your thoughts and tell NYC Parks what we want for our park"
+                rows={3}
+              />
+            </div>
+
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center space-x-2">
+                <input
+                  id="keepInformed"
+                  type="checkbox"
+                  checked={formData.keepInformed}
+                  onChange={(e) => updateField('keepInformed', e.target.checked)}
+                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                />
+                <Label htmlFor="keepInformed" className="text-sm font-normal cursor-pointer">
+                  Keep me informed by email
+                </Label>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <input
+                  id="addToFriendsList"
+                  type="checkbox"
+                  checked={formData.addToFriendsList}
+                  onChange={(e) => updateField('addToFriendsList', e.target.checked)}
+                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                />
+                <Label htmlFor="addToFriendsList" className="text-sm font-normal cursor-pointer">
+                  Add my name to the list of Friends on the website
+                </Label>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <input
+                  id="contactToHelp"
+                  type="checkbox"
+                  checked={formData.contactToHelp}
+                  onChange={(e) => updateField('contactToHelp', e.target.checked)}
+                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                />
+                <Label htmlFor="contactToHelp" className="text-sm font-normal cursor-pointer">
+                  Contact me to help with this cause
+                </Label>
+              </div>
+            </div>
+            
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Sign Petition"}
+            </Button>
+          </form>
+        )}
+      </CardContent>
+    </Card>
+  )
+}

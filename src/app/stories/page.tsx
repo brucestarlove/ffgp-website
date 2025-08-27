@@ -40,7 +40,7 @@ export default function StoriesPage() {
             </Link>
             <Button asChild size="xl">
               <Link href="https://www.youtube.com/playlist?list=PLO9BkTDlJ_bBtUFaJIKb0RC-FcnRugt5v" target="_blank" rel="noopener noreferrer">
-                Watch All Videos
+                Listen To More Neighbors
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

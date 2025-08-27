@@ -1,56 +1,18 @@
-"use client"
-
-import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { 
-  FileText, 
+  FileText,
   Phone, 
   DollarSign, 
   Users, 
   Mail, 
   ExternalLink,
-  CheckCircle,
   AlertTriangle
 } from "lucide-react"
+import { PetitionForm } from "@/components/petition-form"
 
 export default function ActionPage() {
-  const [signatureForm, setSignatureForm] = useState({
-    name: "",
-    email: "",
-    zipCode: "",
-    message: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleSignatureSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      
-      // Save to local JSON (in a real app, this would be an API call)
-      const existingSignatures = JSON.parse(localStorage.getItem('petition-signatures') || '[]')
-      const newSignature = {
-        id: Date.now().toString(),
-        ...signatureForm,
-        timestamp: new Date().toISOString()
-      }
-      existingSignatures.push(newSignature)
-      localStorage.setItem('petition-signatures', JSON.stringify(existingSignatures))
-      
-      // Reset form
-      setSignatureForm({ name: "", email: "", zipCode: "", message: "" })
-    }, 2000)
-  }
 
   const officials = [
     {
@@ -124,80 +86,7 @@ export default function ActionPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
             {/* Petition Signup */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-2xl">
-                  <FileText className="h-6 w-6 text-primary" />
-                  Sign the Petition
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Add your voice to over 4,000 Brooklyn residents demanding NYC Parks preserve our trees.
-                </p>
-              </CardHeader>
-              <CardContent>
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <CheckCircle className="h-12 w-12 mx-auto text-green-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
-                    <p className="text-muted-foreground">
-                      Your signature has been added. Share this campaign with friends and family.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSignatureSubmit} className="space-y-4">
-                    <div>
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        required
-                        value={signatureForm.name}
-                        onChange={(e) => setSignatureForm({...signatureForm, name: e.target.value})}
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        required
-                        value={signatureForm.email}
-                        onChange={(e) => setSignatureForm({...signatureForm, email: e.target.value})}
-                        placeholder="Enter your email"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="zipCode">ZIP Code</Label>
-                      <Input
-                        id="zipCode"
-                        type="text"
-                        value={signatureForm.zipCode}
-                        onChange={(e) => setSignatureForm({...signatureForm, zipCode: e.target.value})}
-                        placeholder="Your ZIP code"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="message">Personal Message (Optional)</Label>
-                      <Textarea
-                        id="message"
-                        value={signatureForm.message}
-                        onChange={(e) => setSignatureForm({...signatureForm, message: e.target.value})}
-                        placeholder="Why do these trees matter to you?"
-                        rows={3}
-                      />
-                    </div>
-                    
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
-                      {isSubmitting ? "Submitting..." : "Sign Petition"}
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
+            <PetitionForm />
 
             {/* Contact Officials */}
             <Card>
@@ -245,7 +134,7 @@ export default function ActionPage() {
       </section>
 
       {/* Support & Donations */}
-      <section className="bg-muted py-16 lg:py-24">
+      <section id="support" className="bg-muted py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -263,7 +152,7 @@ export default function ActionPage() {
                 <h3 className="font-semibold mb-2">DonorBox</h3>
                 <p className="text-sm text-muted-foreground mb-4">Secure online donations</p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#" target="_blank">
+                  <Link href="https://donorbox.org/friends-of-fort-greene-park" target="_blank">
                     Donate <ExternalLink className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
@@ -276,7 +165,7 @@ export default function ActionPage() {
                 <h3 className="font-semibold mb-2">GoFundMe</h3>
                 <p className="text-sm text-muted-foreground mb-4">Community fundraising</p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#" target="_blank">
+                  <Link href="https://www.gofundme.com/f/urgent-protect-78-trees-in-fort-greene-park" target="_blank">
                     Support <ExternalLink className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
@@ -289,7 +178,7 @@ export default function ActionPage() {
                 <h3 className="font-semibold mb-2">Venmo</h3>
                 <p className="text-sm text-muted-foreground mb-4">Quick mobile payments</p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#" target="_blank">
+                  <Link href="https://account.venmo.com/u/FriendsOfFortGreenePark" target="_blank">
                     Send <ExternalLink className="ml-1 h-3 w-3" />
                   </Link>
                 </Button>
@@ -302,8 +191,8 @@ export default function ActionPage() {
                 <h3 className="font-semibold mb-2">Zelle</h3>
                 <p className="text-sm text-muted-foreground mb-4">Bank transfer</p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#" target="_blank">
-                    Transfer <ExternalLink className="ml-1 h-3 w-3" />
+                  <Link href="#support">
+                    Transfer to FortGreeneTalk@gmail.com
                   </Link>
                 </Button>
               </CardContent>
@@ -338,7 +227,7 @@ export default function ActionPage() {
                 </p>
                 <Button asChild className="w-full">
                   <Link href="mailto:volunteers@friendsoffortgreenepark.org">
-                    Volunteer Now
+                    Email Us
                   </Link>
                 </Button>
               </CardContent>
@@ -353,7 +242,7 @@ export default function ActionPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Join our mailing list for campaign updates, rally announcements, and action alerts.
+                  Sign the petition to join our mailing list for campaign updates, rally announcements, and action alerts.
                 </p>
                 <Button asChild variant="outline" className="w-full">
                   <Link href="#newsletter">
@@ -372,13 +261,26 @@ export default function ActionPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Share petition sheets, flyers, and information with neighbors and friends.
+                  Share this campaign with friends, family, and neighbors on social media.
                 </p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/resources">
-                    Get Materials
-                  </Link>
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button asChild variant="outline" className="w-1/2">
+                    <Link 
+                      href="https://www.instagram.com/friendsoffortgreenepark/" 
+                      target="_blank"
+                    >
+                      Share on Instagram
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="w-1/2">
+                    <Link 
+                      href="https://www.facebook.com/FriendsofFortGreenePark" 
+                      target="_blank"
+                    >
+                      Share on Facebook
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
