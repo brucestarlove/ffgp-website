@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreePine, Droplets, Wind, ThermometerSun, Building2, Users, Scale, ArrowRight, Target, Award, Leaf, Landmark, FileText, Megaphone } from "lucide-react"
 import { ImageCarousel } from "@/components/image-carousel"
 import { TableOfContents } from "@/components/table-of-contents"
-import { Footer } from "@/components/footer"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -638,7 +637,6 @@ export default function IssuePage() {
       </section>
       
       <TableOfContents items={tocItems} />
-      <Footer />
     </div>
   )
 }

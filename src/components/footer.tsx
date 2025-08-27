@@ -116,7 +116,7 @@ export function Footer() {
             <h3 className="font-semibold text-foreground">Connect With Us</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:info@friendsoffortgreenepark.org" 
+                href="mailto:fortgreenedesign@gmail.com" 
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />

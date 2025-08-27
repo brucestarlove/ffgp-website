@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { ExternalLink, ArrowRight, Play, Scale, Users, AlertTriangle } from "lucide-react"
 import newsData from "@/data/news.json"
-import { Footer } from "@/components/footer"
 import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
 
 
@@ -16,7 +15,7 @@ export default function NewsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-16 lg:py-12">
+      <section className="bg-gradient-to-b from-primary/10 to-background py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -289,7 +288,6 @@ export default function NewsPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   )
 }

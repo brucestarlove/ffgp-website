@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
 import { VideoGallery } from "@/components/video-gallery"
 import { ImageLightbox } from "@/components/image-lightbox"
-import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -239,8 +238,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

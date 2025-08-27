@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Heart, Users, TreePine, Calendar, ArrowRight, MapPin } from "lucide-react"
-import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
   return (
@@ -54,11 +53,13 @@ export default function AboutPage() {
               <CardContent className="p-8">
                 <div className="text-center">
                   <TreePine className="h-16 w-16 mx-auto text-primary mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                  <h3 className="text-2xl font-bold mb-4">Mission Statement</h3>
                   <p className="text-muted-foreground">
-                    Supporting protection and preservation of the urban forest in Fort Greene Park, 
-                    with appropriate forestry care to maintain the canopy of mature trees while 
-                    making sensible improvements that serve the community.
+                  Friends of Fort Greene Park supports the protection and preservation of the urban forest in Fort Greene Park, 
+                  with appropriate forestry care to maintain the canopy of mature trees.  The tree grove, greenspace, and play 
+                  areas along Myrtle Avenue should remain a beloved community gathering place for residents. NYC has declared a 
+                  climate emergency, and our preservation efforts are aligned with the need to repair and maintain Fort Greene Park 
+                  in the face of increasing heat effects and escalating climate change.
                   </p>
                 </div>
               </CardContent>
@@ -385,7 +386,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   )
 }

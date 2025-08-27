@@ -6,7 +6,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, ChevronLeft, Play } from "lucide-react"
 import newsData from "@/data/news.json"
-import { Footer } from "@/components/footer"
 import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
 
 // News agency logos mapping
@@ -225,8 +224,6 @@ export default function AllNewsPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
