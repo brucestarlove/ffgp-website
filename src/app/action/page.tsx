@@ -126,6 +126,14 @@ export default function ActionPage() {
                     that take decades to replace. Please advocate for the community counter-proposal 
                     that preserves trees while improving park accessibility.&quot;
                   </p>
+                  <div className="mt-3">
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/pdfs/Phone Script - Fort Greene Park Redesign.pdf" target="_blank">
+                        <FileText className="mr-2 h-4 w-4" />
+                        Download Full Example Script
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
