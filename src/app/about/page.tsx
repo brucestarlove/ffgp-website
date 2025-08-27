@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Heart, Users, TreePine, Calendar, ArrowRight, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Heart, Users, TreePine, Calendar, ArrowRight, MapPin, ExternalLink } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -198,41 +199,77 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>City Club of New York</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Advocates for thoughtful urban land-use policy and has been instrumental in our legal challenges 
-                  to ensure proper environmental review.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="https://www.cityclubny.org/" target="_blank" rel="noopener noreferrer">
+              <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer">
+                <CardHeader className="text-center">
+                  <div className="mb-4">
+                    <Image
+                      src="/img/logo-thecityclubofny.jpg"
+                      alt="The City Club of New York logo"
+                      width={120}
+                      height={60}
+                      className="mx-auto object-contain"
+                    />
+                  </div>
+                  <CardTitle className="group-hover:text-primary transition-colors">
+                    The City Club of New York
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    The City Club of New York promotes thoughtful urban land use policy that responds to the needs of all New Yorkers.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Sierra Club</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Environmental organization that explores, enjoys, and protects the planet. They understand 
-                  that replacing green land with hardscape contradicts sustainable planning.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="https://www.sierraclub.org/" target="_blank" rel="noopener noreferrer">
+              <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer">
+                <CardHeader className="text-center">
+                  <div className="mb-4">
+                    <Image
+                      src="/img/logo-sierraclub.png"
+                      alt="Sierra Club logo"
+                      width={120}
+                      height={60}
+                      className="mx-auto object-contain"
+                    />
+                  </div>
+                  <CardTitle className="group-hover:text-primary transition-colors">
+                    Sierra Club
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  Sierra Club Mission: To explore, enjoy and protect the planet.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>A Better Way</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Grassroots group seeking alternatives to destructive redevelopment projects. 
-                  They support community-driven solutions over top-down planning.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="https://www.facebook.com/ABetterWayNYC/" target="_blank" rel="noopener noreferrer">
+              <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer">
+                <CardHeader className="text-center">
+                  <div className="mb-4">
+                    <Image
+                      src="/img/logo-abetterway.jpg"
+                      alt="A Better Way logo"
+                      width={120}
+                      height={60}
+                      className="mx-auto object-contain"
+                    />
+                  </div>
+                  <CardTitle className="group-hover:text-primary transition-colors">
+                    a Better Way
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    A Better Way is a grassroots, nonprofit organization committed to identifying alternatives to the NYC DOT&apos;s proposed BQE redevelopment plan. 
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
