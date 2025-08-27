@@ -11,34 +11,30 @@ interface Video {
   title: string
   url: string
   thumbnail: string
-  description: string
 }
 
 const videos: Video[] = [
   {
     id: 1,
-    title: "Community Voices: Why We Need Our Trees",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    description: "Local families share why Fort Greene Park's trees matter to their daily lives"
+    title: `"So many things that need to be done. Why are you building a plaza here?" —Maria`,
+    url: "https://www.youtube.com/watch?v=09QD-Rt4g_Q",
+    thumbnail: "https://img.youtube.com/vi/09QD-Rt4g_Q/maxresdefault.jpg"
   },
   {
     id: 2,
-    title: "Environmental Impact of Tree Removal", 
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    description: "Climate scientists explain the environmental consequences of replacing trees with concrete"
+    title: `"This is what keeps the community together... by doing that... you segregate the community" —Joe`, 
+    url: "https://www.youtube.com/watch?v=lg2WRg5SDUc",
+    thumbnail: "https://img.youtube.com/vi/lg2WRg5SDUc/maxresdefault.jpg"
   },
   {
     id: 3,
-    title: "Expert Analysis: Design Legacy vs Modern Plans",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg", 
-    description: "Landscape architects discuss Olmsted's vision and the importance of naturalistic design"
+    title: `"Let nature be. Let mother nature grow for us." —Angeline and Alfonso`,
+    url: "https://www.youtube.com/watch?v=tGd1bejpG9I",
+    thumbnail: "https://img.youtube.com/vi/tGd1bejpG9I/maxresdefault.jpg"
   }
 ]
 
-export function VideoGallery() {
+export function CommunityVoicesVideoGalleryPreview() {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 1
@@ -78,7 +74,6 @@ export function VideoGallery() {
               </div>
               <div className="p-4">
                 <h4 className="font-semibold text-lg mb-2 line-clamp-2">{video.title}</h4>
-                <p className="text-sm text-muted-foreground line-clamp-2">{video.description}</p>
               </div>
             </CardContent>
           </Card>

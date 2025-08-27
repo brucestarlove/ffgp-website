@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TreePine, Users, Calendar, AlertTriangle, Volume2, ThermometerSun, ArrowRight } from "lucide-react"
-import { VideoGallery } from "@/components/video-gallery"
+import { CommunityVoicesVideoGalleryPreview } from "@/components/community-voices-video-gallery-preview"
 import { ImageLightbox } from "@/components/image-lightbox"
 
 export default function Home() {
@@ -178,14 +178,14 @@ export default function Home() {
               Voices from the Community
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear directly from neighbors, families, and experts about why Fort Greene Park&apos;s trees matter.
+              Hear directly from neighbors about why Fort Greene Park&apos;s trees matter.
             </p>
           </div>
-          <VideoGallery />
+          <CommunityVoicesVideoGalleryPreview />
           <div className="text-center mt-12">
             <Button asChild size="lg">
               <Link href="/stories">
-                Read More Community Stories
+                See More Community Stories
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
