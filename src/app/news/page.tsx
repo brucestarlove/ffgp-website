@@ -5,7 +5,7 @@ import Image from "next/image"
 import { ExternalLink, ArrowRight, Play, Scale, Users, AlertTriangle } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
-import { decodeHtmlEntities, parseDate } from "@/lib/utils"
+import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
 
 
 export default function NewsPage() {
@@ -80,7 +80,7 @@ export default function NewsPage() {
                 <div className="text-muted-foreground leading-relaxed">
                   {decodeHtmlEntities(featuredStory.excerpt).split('\n').map((line, index) => (
                     <p key={index} className={index > 0 ? 'mt-2' : ''}>
-                      {line}
+                      {renderTextWithBold(line)}
                     </p>
                   ))}
                 </div>
@@ -135,7 +135,7 @@ export default function NewsPage() {
                       <div className="text-sm text-muted-foreground mb-4">
                         {decodeHtmlEntities(story.excerpt).split('\n').map((line, index) => (
                           <p key={index} className={`${index > 0 ? 'mt-2' : ''} line-clamp-3`}>
-                            {line}
+                            {renderTextWithBold(line)}
                           </p>
                         ))}
                       </div>

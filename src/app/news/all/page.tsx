@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, ChevronLeft, Play } from "lucide-react"
 import newsData from "@/data/news.json"
 import { Footer } from "@/components/footer"
-import { decodeHtmlEntities, parseDate } from "@/lib/utils"
+import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
 
 // News agency logos mapping
 const newsLogos: Record<string, string> = {
@@ -166,7 +166,7 @@ export default function AllNewsPage() {
                     <div className="text-muted-foreground leading-relaxed">
                       {decodeHtmlEntities(article.excerpt).split('\n').map((line, index) => (
                         <p key={index} className={index > 0 ? 'mt-2' : ''}>
-                          {line}
+                          {renderTextWithBold(line)}
                         </p>
                       ))}
                     </div>
