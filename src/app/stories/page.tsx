@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 import { Quote, Users, Heart, ArrowRight } from "lucide-react"
 import testimonials from "@/data/testimonials.json"
+import { CommunityVoicesVideoGalleryPreview } from "@/components/community-voices-video-gallery-preview"
 
 export default function StoriesPage() {
   return (
@@ -19,6 +21,29 @@ export default function StoriesPage() {
               Hear from residents, experts, and community members about why preserving 
               Fort Greene Park&apos;s mature trees matters to them.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <CommunityVoicesVideoGalleryPreview />
+          <div className="text-center mt-12">
+            <Link href="https://www.youtube.com/playlist?list=PLO9BkTDlJ_bBtUFaJIKb0RC-FcnRugt5v" target="_blank" rel="noopener noreferrer">
+              <Image 
+                src="/img/community-voices-videos-preview.jpg" 
+                alt="Community voices videos preview" 
+                width={791}
+                height={603}
+                className="mx-auto mb-8 rounded-lg shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+              />
+            </Link>
+            <Button asChild size="xl">
+              <Link href="https://www.youtube.com/playlist?list=PLO9BkTDlJ_bBtUFaJIKb0RC-FcnRugt5v" target="_blank" rel="noopener noreferrer">
+                Watch All Videos
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

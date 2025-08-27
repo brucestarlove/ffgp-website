@@ -185,7 +185,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Button asChild size="lg">
               <Link href="/stories">
-                See More Community Stories
+                Read More Community Stories
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
