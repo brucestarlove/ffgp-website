@@ -19,7 +19,14 @@ const newsLogos: Record<string, string> = {
   "CBS News": "/img/logo-cbs.png",
   "BK Reader": "/img/logo-bkr.jpg",
   "New York Post": "/img/logo-nyp.png",
-   "Brooklyn Daily Eagle": "/img/logo-brooklyn_daily_eagle.jpg",
+  "Brooklyn Daily Eagle": "/img/logo-brooklyn_daily_eagle.jpg",
+  "American Society of Landscape Architects": "/img/logo-asla.jpg",
+  "Patch": "/img/logo-brooklynny_patch.jpg",
+  "City & State NY": "/img/logo-citystatenewyork.jpg",
+  "Gothamist": "/img/logo-gothamist.png",
+  "FFGP": "/logo.jpg",
+  "NY News 1": "/img/logo-nynews1.jpg",
+  "A Walk In The Park": "/img/logo-walkinthepark.jpg"
 }
 
 export default function AllNewsPage() {
