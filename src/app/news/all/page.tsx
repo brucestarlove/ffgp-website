@@ -66,7 +66,7 @@ export default function AllNewsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
-              {visibleNews.map((article, index) => (
+              {visibleNews.map((article) => (
                 <article 
                   key={article.id} 
                   className="grid grid-cols-1 md:grid-cols-4 gap-6 py-6 border-b border-border last:border-b-0"
@@ -86,7 +86,10 @@ export default function AllNewsPage() {
                             onError={(e) => {
                               // Fallback to text if image fails to load
                               e.currentTarget.style.display = 'none'
-                              e.currentTarget.nextElementSibling!.style.display = 'block'
+                              const nextSibling = e.currentTarget.nextElementSibling as HTMLElement
+                              if (nextSibling) {
+                                nextSibling.style.display = 'block'
+                              }
                             }}
                           />
                         ) : null}
