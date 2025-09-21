@@ -23,7 +23,7 @@ export default function ActionPage() {
     },
     {
       name: "Shekar Krishnan", 
-      title: "Council Member, District 25",
+      title: "Chair of the City Council Parks Committee; Council Member, District 25",
       phone: "(718) 383-9566",
       office: "Queens City Hall"
     },

@@ -60,6 +60,9 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -72,7 +75,7 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b">
             {navigation.map((item) => (
               <Link

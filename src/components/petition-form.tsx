@@ -161,41 +161,41 @@ export function PetitionForm() {
             </div>
 
             <div className="space-y-3 pt-2">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-start space-x-3">
                 <input
                   id="keepInformed"
                   type="checkbox"
                   checked={formData.keepInformed}
                   onChange={(e) => updateField('keepInformed', e.target.checked)}
-                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                  className="mt-0.5 h-4 w-4 rounded border-2 border-input bg-background text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-primary checked:bg-primary checked:border-primary disabled:cursor-not-allowed disabled:opacity-50"
                 />
-                <Label htmlFor="keepInformed" className="text-sm font-normal cursor-pointer">
+                <Label htmlFor="keepInformed" className="text-sm font-normal cursor-pointer leading-relaxed">
                   Keep me informed by email
                 </Label>
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-start space-x-3">
                 <input
                   id="addToFriendsList"
                   type="checkbox"
                   checked={formData.addToFriendsList}
                   onChange={(e) => updateField('addToFriendsList', e.target.checked)}
-                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                  className="mt-0.5 h-4 w-4 rounded border-2 border-input bg-background text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-primary checked:bg-primary checked:border-primary disabled:cursor-not-allowed disabled:opacity-50"
                 />
-                <Label htmlFor="addToFriendsList" className="text-sm font-normal cursor-pointer">
-                  Add my name to the list of Friends on the website
+                <Label htmlFor="addToFriendsList" className="text-sm font-normal cursor-pointer leading-relaxed">
+                  Add my name to the list of Friends on the website (coming soon)
                 </Label>
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-start space-x-3">
                 <input
                   id="contactToHelp"
                   type="checkbox"
                   checked={formData.contactToHelp}
                   onChange={(e) => updateField('contactToHelp', e.target.checked)}
-                  className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                  className="mt-0.5 h-4 w-4 rounded border-2 border-input bg-background text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-primary checked:bg-primary checked:border-primary disabled:cursor-not-allowed disabled:opacity-50"
                 />
-                <Label htmlFor="contactToHelp" className="text-sm font-normal cursor-pointer">
+                <Label htmlFor="contactToHelp" className="text-sm font-normal cursor-pointer leading-relaxed">
                   Contact me to help with this cause
                 </Label>
               </div>

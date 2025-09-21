@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Heart, Users, TreePine, Calendar, ArrowRight, MapPin, ExternalLink } from "lucide-react"
+import { Users, TreePine, ArrowRight, MapPin } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Journey */}
-      <section className="py-16 lg:py-24">
+      {/* <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -184,7 +184,7 @@ export default function AboutPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partners & Coalition */}
       <section className="bg-muted py-16 lg:py-24">
