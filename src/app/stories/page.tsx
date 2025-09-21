@@ -114,6 +114,13 @@ export default function StoriesPage() {
               <CardContent className="p-8 text-center">
                 <PetitionCounter showViewSignaturesButton={false} size="default" />
                 <p className="text-muted-foreground mt-4">Have signed our petition to preserve the trees</p>
+                <div className="mt-4">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/petition-signatures">
+                      View All Signatures
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
