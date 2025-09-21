@@ -6,6 +6,7 @@ import { Quote, Users, Heart, ArrowRight } from "lucide-react"
 import testimonials from "@/data/testimonials.json"
 import { CommunityVoicesVideoGalleryPreview } from "@/components/community-voices-video-gallery-preview"
 import { FeaturedVideoCard } from "@/components/featured-video-card"
+import { PetitionCounter } from "@/components/petition-counter"
 
 export default function StoriesPage() {
   return (
@@ -111,9 +112,8 @@ export default function StoriesPage() {
 
             <Card>
               <CardContent className="p-8 text-center">
-                <Heart className="h-12 w-12 mx-auto text-primary mb-4" />
-                <h3 className="text-3xl font-bold text-foreground mb-2">Thousands</h3>
-                <p className="text-muted-foreground">Of Brooklyn residents supporting preservation</p>
+                <PetitionCounter showViewSignaturesButton={false} size="default" />
+                <p className="text-muted-foreground mt-4">Have signed our petition to preserve the trees</p>
               </CardContent>
             </Card>
 

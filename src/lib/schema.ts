@@ -8,7 +8,5 @@ export const petitionSignatures = pgTable('petition_signatures', {
   phone: text('phone'),
   message: text('message'),
   keepInformed: boolean('keep_informed').default(false),
-  addToFriendsList: boolean('add_to_friends_list').default(false),
-  contactToHelp: boolean('contact_to_help').default(false),
   createdAt: timestamp('created_at').defaultNow(),
 })
