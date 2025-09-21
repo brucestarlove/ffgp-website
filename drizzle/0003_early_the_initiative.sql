@@ -1,0 +1,1 @@
+ALTER TABLE "petition_signatures" ADD CONSTRAINT "petition_signatures_email_unique" UNIQUE("email");
