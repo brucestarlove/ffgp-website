@@ -10,8 +10,6 @@ const petitionSchema = z.object({
   phone: z.string().optional(),
   message: z.string().optional(),
   keepInformed: z.boolean().default(false),
-  addToFriendsList: z.boolean().default(false),
-  contactToHelp: z.boolean().default(false),
 })
 
 export async function POST(request: NextRequest) {
@@ -41,6 +39,18 @@ export async function POST(request: NextRequest) {
           details: error.errors 
         },
         { status: 400 }
+      )
+    }
+    
+    // Check for duplicate email constraint violation
+    if (error instanceof Error && error.message.includes('unique constraint')) {
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'duplicate_email',
+          message: 'This email address has already signed the petition' 
+        },
+        { status: 409 }
       )
     }
     

@@ -45,7 +45,14 @@ export function PetitionForm() {
       })
 
       if (!response.ok) {
-        throw new Error('Failed to submit petition')
+        const errorData = await response.json()
+        
+        if (errorData.error === 'duplicate_email') {
+          setError('This email address has already signed the petition. Thank you for your support!')
+          return
+        }
+        
+        throw new Error(errorData.message || 'Failed to submit petition')
       }
 
       setIsSubmitted(true)
