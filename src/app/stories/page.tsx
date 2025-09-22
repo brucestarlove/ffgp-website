@@ -121,14 +121,14 @@ export default function StoriesPage() {
               <CardContent className="p-8 text-center">
                 <Users className="h-12 w-12 mx-auto text-primary mb-4" />
                 <h3 className="text-3xl font-bold text-foreground mb-2">8 Years</h3>
-                <p className="text-muted-foreground">Of community organizing and legal advocacy</p>
+                <p className="text-muted-foreground">of community organizing and legal advocacy</p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-8 text-center">
                 <PetitionCounter showViewSignaturesButton={false} size="default" />
-                <p className="text-muted-foreground mt-4">Have signed our petition to preserve the trees</p>
+                <p className="text-muted-foreground mt-4">have signed our petition to preserve the trees</p>
                 <div className="mt-4">
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/petition-signatures">
@@ -143,7 +143,7 @@ export default function StoriesPage() {
               <CardContent className="p-8 text-center">
                 <Quote className="h-12 w-12 mx-auto text-primary mb-4" />
                 <h3 className="text-3xl font-bold text-foreground mb-2">Unity</h3>
-                <p className="text-muted-foreground">Across all backgrounds to protect our urban forest</p>
+                <p className="text-muted-foreground">across all backgrounds to protect our urban forest</p>
               </CardContent>
             </Card>
           </div>
