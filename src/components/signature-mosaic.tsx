@@ -15,7 +15,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
   const [error, setError] = useState<string | null>(null)
   const [selectedSignature, setSelectedSignature] = useState<PetitionSignature | null>(null)
   const [mounted, setMounted] = useState(false)
-  
+
   const observerRef = useRef<HTMLDivElement>(null)
   const loadingRef = useRef(false)
 
@@ -26,21 +26,21 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
 
   const loadMoreSignatures = useCallback(async () => {
     if (loadingRef.current || !hasMore) return
-    
+
     loadingRef.current = true
     setIsLoading(true)
     setError(null)
-    
+
     const requestPage = page + 1
-    
+
     try {
       const response = await fetch(`/api/petition/signatures?page=${requestPage}&limit=250`)
       if (!response.ok) throw new Error('Failed to fetch signatures')
-      
+
       const data: SignaturesResponse = await response.json()
-      
+
       console.log(`📊 Page ${requestPage}: got ${data.signatures.length} signatures, total: ${data.pagination.totalCount}, hasNext: ${data.pagination.hasNextPage}`)
-      
+
       if (data.signatures.length > 0) {
         setSignatures(prev => [...prev, ...data.signatures])
         setPage(prev => prev + 1)
@@ -55,7 +55,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
       setIsLoading(false)
       loadingRef.current = false
     }
-  }, [page, hasMore, signatures.length])
+  }, [page, hasMore])
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -114,7 +114,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
     <div
       key={`skeleton-${i}`}
       className="px-3 py-2 rounded-2xl bg-gray-100 animate-pulse min-h-[2.5rem] flex items-center justify-center"
-      style={{ 
+      style={{
         transform: `rotate(${(i % 7 - 3) * 2}deg)`,
         animationDelay: `${i * 50}ms`
       }}
@@ -126,7 +126,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
   return (
     <div className={cn("w-full", className)}>
       {/* Forest Grid */}
-      <div 
+      <div
         className={cn(
           "grid gap-3 md:gap-4",
           "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8",
@@ -144,7 +144,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
             onCommentClick={handleCommentClick}
           />
         ))}
-        
+
         {/* Show skeleton cards while loading */}
         {isLoading && skeletonCards}
       </div>
@@ -157,7 +157,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
             <span>Growing the forest...</span>
           </div>
         )}
-        
+
         {!hasMore && signatures.length > 0 && (
           <div className="flex flex-col items-center gap-3 text-center max-w-md mx-auto">
             <div className="flex items-center gap-2 text-green-700">
@@ -168,15 +168,15 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
             <p className="text-muted-foreground text-sm">
               Join your Brooklyn neighbors in protecting Fort Greene Park&apos;s trees
             </p>
-            <a 
-              href="/action" 
+            <a
+              href="/action"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Sign the Petition
             </a>
           </div>
         )}
-        
+
         {error && (
           <div className="text-red-600 text-sm bg-red-50 px-4 py-2 rounded-lg">
             {error}
@@ -188,11 +188,11 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
       {mounted && selectedSignature && createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeModal}
           />
-          
+
           {/* Modal */}
           <div className="relative bg-white rounded-lg shadow-xl max-w-lg w-full p-6 animate-in fade-in-0 zoom-in-95 duration-200">
             {/* Close button */}
@@ -215,13 +215,13 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
               <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
                 &quot;{selectedSignature.message}&quot;
               </blockquote>
-              <div className="mt-3 text-sm text-muted-foreground text-right">
+              {/* <div className="mt-3 text-sm text-muted-foreground text-right">
                 {new Date(selectedSignature.createdAt).toLocaleDateString('en-US', {
                   month: '2-digit',
                   day: '2-digit', 
                   year: 'numeric'
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>,
