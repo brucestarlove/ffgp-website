@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
         createdAt: petitionSignatures.createdAt,
       })
       .from(petitionSignatures)
-      .orderBy(desc(petitionSignatures.createdAt))
+      .orderBy(desc(petitionSignatures.id))
       .limit(limit)
       .offset(offset)
 
