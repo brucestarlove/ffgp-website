@@ -45,11 +45,11 @@ export function SignatureCard({ signature, index, onCommentClick }: SignatureCar
         )}
       >
         <div className="flex items-center gap-1.5">
+          <span className="text-green-600 text-base" role="img" aria-label="tree">
+            🍃
+          </span>
           <span className="text-sm font-medium text-green-800 whitespace-nowrap">
             {signature.displayName}
-          </span>
-          <span className="text-green-600 text-base" role="img" aria-label="tree">
-            🌳
           </span>
           {hasComment && (
             <MessageSquare className="h-3 w-3 text-green-600 opacity-70 group-hover:opacity-100 transition-opacity" />

@@ -49,7 +49,7 @@ export default function PetitionSignaturesPage() {
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Growing Forest</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Each leaf represents a neighbor who&apos;s joined our movement. Names are shown as first name and last initial to protect privacy. Hover over leaves with message icons to see supporter comments.
+                Each leaf represents a neighbor who&apos;s signed the petition. Click on leaves with message icons to see supporter comments.
               </p>
             </div>
 
