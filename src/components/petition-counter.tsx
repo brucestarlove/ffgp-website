@@ -12,7 +12,7 @@ interface PetitionCounterProps {
 }
 
 export function PetitionCounter({ 
-  initialCount = 1732, 
+  initialCount = 1037, 
   showViewSignaturesButton = true,
   size = "default" 
 }: PetitionCounterProps) {
