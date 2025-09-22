@@ -211,6 +211,13 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
               <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
                 &quot;{selectedSignature.message}&quot;
               </blockquote>
+              <div className="mt-3 text-sm text-muted-foreground text-right">
+                {new Date(selectedSignature.createdAt).toLocaleDateString('en-US', {
+                  month: '2-digit',
+                  day: '2-digit', 
+                  year: 'numeric'
+                })}
+              </div>
             </div>
           </div>
         </div>,
