@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Users, Eye } from "lucide-react"
+import { Eye } from "lucide-react"
 
 interface PetitionCounterProps {
   initialCount?: number
@@ -104,7 +104,6 @@ export function PetitionCounter({
       
       <div className={textClasses}>
         <div className="flex items-center justify-center gap-2">
-          <Users className="h-5 w-5" />
           neighbors and counting
         </div>
       </div>

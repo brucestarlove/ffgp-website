@@ -7,6 +7,22 @@ import testimonials from "@/data/testimonials.json"
 import { CommunityVoicesVideoGalleryPreview } from "@/components/community-voices-video-gallery-preview"
 import { FeaturedVideoCard } from "@/components/featured-video-card"
 import { PetitionCounter } from "@/components/petition-counter"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Community Stories & Voices - Fort Greene Park | FFGP",
+  description: "Hear from residents, experts, and community members about why preserving Fort Greene Park&apos;s mature trees matters. Watch videos and read testimonials from neighbors.",
+  keywords: ["community stories", "Fort Greene Park", "testimonials", "resident voices", "tree preservation", "neighborhood"],
+  openGraph: {
+    title: "Community Stories & Voices - Fort Greene Park",
+    description: "Hear from residents, experts, and community members about why preserving Fort Greene Park&apos;s mature trees matters.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "Community Stories & Voices - Fort Greene Park",
+    description: "Hear from residents and experts about why preserving Fort Greene Park&apos;s mature trees matters.",
+  },
+}
 
 export default function StoriesPage() {
   return (

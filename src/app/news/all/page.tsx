@@ -7,6 +7,22 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, ChevronLeft, Play } from "lucide-react"
 import newsData from "@/data/news.json"
 import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "All News Coverage - Fort Greene Park Campaign | FFGP",
+  description: "Complete timeline of media coverage for the Fort Greene Park tree preservation campaign. Browse all news articles, interviews, and reports from 8 years of advocacy.",
+  keywords: ["all news", "media coverage", "Fort Greene Park", "complete timeline", "news articles", "campaign coverage"],
+  openGraph: {
+    title: "All News Coverage - Fort Greene Park Campaign",
+    description: "Complete timeline of media coverage for the Fort Greene Park tree preservation campaign spanning 8 years of advocacy.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "All News Coverage - Fort Greene Park Campaign",
+    description: "Complete media coverage timeline for Fort Greene Park tree preservation campaign.",
+  },
+}
 
 // News agency logos mapping
 const newsLogos: Record<string, string> = {

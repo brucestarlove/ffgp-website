@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Friends of Fort Greene Park",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Fort Greene Park mature trees campaign",
@@ -65,10 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Save Fort Greene Park's 78 Mature Trees",
     description: "Join the fight to preserve Brooklyn's urban forest. Stop NYC Parks from removing mature trees for concrete.",
-    images: ["/og-image.jpg"],
-  },
-  verification: {
-    google: "your-google-site-verification",
+    images: ["/og-image.svg"],
   },
   category: "Environmental Advocacy",
 };

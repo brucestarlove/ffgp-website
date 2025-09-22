@@ -5,6 +5,22 @@ import Image from "next/image"
 import { ExternalLink, ArrowRight, Play, Scale, Users, AlertTriangle } from "lucide-react"
 import newsData from "@/data/news.json"
 import { decodeHtmlEntities, parseDate, renderTextWithBold } from "@/lib/utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "News & Timeline - Fort Greene Park Campaign | FFGP",
+  description: "Follow the 8-year campaign to save Fort Greene Park's trees through court decisions, media coverage, and community organizing. Stay informed on the latest updates.",
+  keywords: ["news", "timeline", "Fort Greene Park", "media coverage", "court decisions", "campaign updates", "tree preservation"],
+  openGraph: {
+    title: "News & Timeline - Fort Greene Park Campaign",
+    description: "Follow the 8-year campaign to save Fort Greene Park's trees through court decisions, media coverage, and community organizing.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "News & Timeline - Fort Greene Park Campaign",
+    description: "Follow the campaign to save Fort Greene Park's trees through media coverage and community organizing.",
+  },
+}
 
 
 export default function NewsPage() {

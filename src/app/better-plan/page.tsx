@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "A Better Plan - Fort Greene Park Counter-Proposal | FFGP",
   description: "Our community counter-proposal preserves 78 mature trees while improving accessibility and drainage. See how we can enhance Fort Greene Park without destroying its natural character.",
   keywords: ["Fort Greene Park", "counter-proposal", "save trees", "NYC Parks", "community plan", "preserve trees", "accessibility"],
+  openGraph: {
+    title: "A Better Plan for Fort Greene Park - Community Counter-Proposal",
+    description: "Our community counter-proposal preserves 78 mature trees while improving accessibility and drainage. See how we can enhance Fort Greene Park without destroying its natural character.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "A Better Plan for Fort Greene Park - Community Counter-Proposal",
+    description: "Our community counter-proposal preserves 78 mature trees while improving accessibility and drainage.",
+  },
 }
 
 export default function IssuePage() {

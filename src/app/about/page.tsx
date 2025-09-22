@@ -3,6 +3,22 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { Users, TreePine, ArrowRight, MapPin } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Friends of Fort Greene Park | FFGP",
+  description: "We are neighbors and enjoyers of Fort Greene Park who are working to convince NYC Parks that their plan to cut down 78 mature trees is unwanted by the community.",
+  keywords: ["about", "Friends of Fort Greene Park", "FFGP", "community organization", "tree preservation", "neighborhood"],
+  openGraph: {
+    title: "About Friends of Fort Greene Park",
+    description: "We are neighbors working to preserve Fort Greene Park's mature trees and convince NYC Parks to reconsider their destructive plan.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "About Friends of Fort Greene Park",
+    description: "Neighbors working to preserve Fort Greene Park's mature trees.",
+  },
+}
 
 export default function AboutPage() {
   return (

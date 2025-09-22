@@ -12,6 +12,22 @@ import {
 } from "lucide-react"
 import { PetitionForm } from "@/components/petition-form"
 import { PetitionCounter } from "@/components/petition-counter"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Take Action - Save Fort Greene Park&apos;s Trees | FFGP",
+  description: "Sign our petition, contact officials, and join thousands fighting to save 78 mature trees in Fort Greene Park. Every signature counts in stopping NYC Parks&apos; destructive plan.",
+  keywords: ["petition", "Fort Greene Park", "take action", "sign petition", "contact officials", "save trees", "NYC Parks"],
+  openGraph: {
+    title: "Take Action - Save Fort Greene Park&apos;s Trees",
+    description: "Sign our petition and contact officials to save 78 mature trees in Fort Greene Park. Join thousands fighting NYC Parks&apos; destructive plan.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "Take Action - Save Fort Greene Park&apos;s Trees",
+    description: "Sign our petition and contact officials to save 78 mature trees in Fort Greene Park.",
+  },
+}
 
 export default function ActionPage() {
 

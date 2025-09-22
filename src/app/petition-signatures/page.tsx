@@ -2,6 +2,22 @@
 
 import { PetitionCounter } from "@/components/petition-counter"
 import { SignatureMosaic } from "@/components/signature-mosaic"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Petition Signatures - Community Forest | FFGP",
+  description: "See thousands of Brooklyn neighbors who have signed our petition to save Fort Greene Park's mature trees. Each signature represents community support for preserving our urban forest.",
+  keywords: ["petition signatures", "community support", "Fort Greene Park", "tree preservation", "Brooklyn neighbors", "urban forest"],
+  openGraph: {
+    title: "Petition Signatures - Community Forest Growing Together",
+    description: "See thousands of Brooklyn neighbors who have signed our petition to save Fort Greene Park's mature trees.",
+    images: ["/og-image.svg"],
+  },
+  twitter: {
+    title: "Petition Signatures - Community Forest",
+    description: "Thousands of Brooklyn neighbors standing together to save Fort Greene Park's mature trees.",
+  },
+}
 
 export default function PetitionSignaturesPage() {
   return (
