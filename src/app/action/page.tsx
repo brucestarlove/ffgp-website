@@ -97,18 +97,15 @@ export default function ActionPage() {
         </div>
       </section>
 
-      {/* Petition Counter */}
-      <section className="py-8 lg:py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <PetitionCounter size="large" />
-        </div>
-      </section>
-
       {/* Main Actions */}
-      <section className="py-16 lg:py-24">
+      <section className="py-8 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+          {/* Petition Counter */}
+          <div className="pb-12">
+            <PetitionCounter size="large" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">  
             {/* Petition Signup */}
             <PetitionForm />
 
