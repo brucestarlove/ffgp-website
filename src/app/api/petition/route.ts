@@ -42,25 +42,6 @@ export async function POST(request: NextRequest) {
       )
     }
     
-    // Check for duplicate email constraint violation
-    const isDuplicateEmail = error instanceof Error && (
-      error.message.includes('duplicate key value violates unique constraint') ||
-      error.message.includes('petition_signatures_email_unique') ||
-      (error as any).code === '23505' ||
-      ((error as any).cause && (error as any).cause.code === '23505') ||
-      ((error as any).cause && (error as any).cause.constraint === 'petition_signatures_email_unique')
-    )
-    
-    if (isDuplicateEmail) {
-      return NextResponse.json(
-        { 
-          success: false, 
-          error: 'duplicate_email',
-          message: 'This email address has already signed the petition' 
-        },
-        { status: 409 }
-      )
-    }
     
     return NextResponse.json(
       { 

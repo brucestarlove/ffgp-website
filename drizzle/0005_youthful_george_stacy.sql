@@ -1,0 +1,1 @@
+ALTER TABLE "petition_signatures" DROP CONSTRAINT "petition_signatures_email_unique";

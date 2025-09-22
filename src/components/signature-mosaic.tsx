@@ -31,11 +31,15 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
     setIsLoading(true)
     setError(null)
     
+    const requestPage = page + 1
+    
     try {
-      const response = await fetch(`/api/petition/signatures?page=${page + 1}&limit=100`)
+      const response = await fetch(`/api/petition/signatures?page=${requestPage}&limit=250`)
       if (!response.ok) throw new Error('Failed to fetch signatures')
       
       const data: SignaturesResponse = await response.json()
+      
+      console.log(`📊 Page ${requestPage}: got ${data.signatures.length} signatures, total: ${data.pagination.totalCount}, hasNext: ${data.pagination.hasNextPage}`)
       
       if (data.signatures.length > 0) {
         setSignatures(prev => [...prev, ...data.signatures])
@@ -45,13 +49,13 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
         setHasMore(false)
       }
     } catch (err) {
-      setError('Failed to load more signatures')
       console.error('Error loading signatures:', err)
+      setError('Failed to load more signatures')
     } finally {
       setIsLoading(false)
       loadingRef.current = false
     }
-  }, [page, hasMore])
+  }, [page, hasMore, signatures.length])
 
   // Intersection Observer for lazy loading
   useEffect(() => {

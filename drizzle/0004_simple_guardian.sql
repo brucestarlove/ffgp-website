@@ -1,0 +1,1 @@
+ALTER TABLE "petition_signatures" ALTER COLUMN "email" DROP NOT NULL;
