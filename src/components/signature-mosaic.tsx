@@ -208,9 +208,6 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
                   {selectedSignature.displayName}&apos;s comment
                 </h3>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Why this Brooklyn neighbor supports saving Fort Greene Park&apos;s trees
-              </p>
               <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
                 &quot;{selectedSignature.message}&quot;
               </blockquote>
