@@ -1,5 +1,3 @@
-"use client"
-
 import { PetitionCounter } from "@/components/petition-counter"
 import { SignatureMosaic } from "@/components/signature-mosaic"
 import { Metadata } from "next"

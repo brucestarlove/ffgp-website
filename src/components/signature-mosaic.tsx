@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
+import { createPortal } from "react-dom"
 import { SignatureMosaicProps, PetitionSignature, SignaturesResponse } from "@/types/petition"
 import { SignatureCard } from "./signature-card"
-import { Loader2, TreePine } from "lucide-react"
+import { Loader2, TreePine, X, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export function SignatureMosaic({ initialSignatures = [], className }: SignatureMosaicProps) {
@@ -12,9 +13,16 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
   const [hasMore, setHasMore] = useState(true)
   const [page, setPage] = useState(1)
   const [error, setError] = useState<string | null>(null)
+  const [selectedSignature, setSelectedSignature] = useState<PetitionSignature | null>(null)
+  const [mounted, setMounted] = useState(false)
   
   const observerRef = useRef<HTMLDivElement>(null)
   const loadingRef = useRef(false)
+
+  // For portal rendering
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const loadMoreSignatures = useCallback(async () => {
     if (loadingRef.current || !hasMore) return
@@ -71,9 +79,31 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
   }, [initialSignatures.length, loadMoreSignatures])
 
   const handleCommentClick = (signature: PetitionSignature) => {
-    // Could open a modal or expand inline
-    console.log('Comment clicked:', signature)
+    setSelectedSignature(signature)
   }
+
+  const closeModal = () => {
+    setSelectedSignature(null)
+  }
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeModal()
+      }
+    }
+
+    if (selectedSignature) {
+      document.addEventListener("keydown", handleEscape)
+      document.body.style.overflow = "hidden"
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape)
+      document.body.style.overflow = "unset"
+    }
+  }, [selectedSignature])
 
   // Generate skeleton placeholders
   const skeletonCards = Array.from({ length: 20 }, (_, i) => (
@@ -149,6 +179,46 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
           </div>
         )}
       </div>
+
+      {/* Comment Modal - Rendered via Portal */}
+      {mounted && selectedSignature && createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={closeModal}
+          />
+          
+          {/* Modal */}
+          <div className="relative bg-white rounded-lg shadow-xl max-w-lg w-full p-6 animate-in fade-in-0 zoom-in-95 duration-200">
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            >
+              <X className="h-4 w-4" />
+              <span className="sr-only">Close</span>
+            </button>
+
+            {/* Content */}
+            <div className="pr-8">
+              <div className="flex items-center gap-2 mb-2">
+                <Quote className="h-5 w-5 text-primary" />
+                <h3 className="text-lg font-semibold leading-none tracking-tight">
+                  {selectedSignature.displayName}&apos;s comment
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                Why this Brooklyn neighbor supports saving Fort Greene Park&apos;s trees
+              </p>
+              <blockquote className="border-l-4 border-primary pl-4 italic text-foreground">
+                &quot;{selectedSignature.message}&quot;
+              </blockquote>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   )
 }
