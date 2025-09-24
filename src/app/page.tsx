@@ -17,7 +17,7 @@ export default function Home() {
               <span className="text-primary block">Mature Trees</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              NYC Parks wants to cut down 78 mature trees and pave 13,000 sq ft of our beloved Fort Greene Park. 
+              NYC Parks wants to cut down 78 mature trees and pave 13,000 sq ft of our beloved Fort Greene Park.
               We&apos;re showing them that their plan is unwanted by the people.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 text-center">
             <AlertTriangle className="h-5 w-5 text-destructive" />
             <p className="text-sm font-medium">
-              <strong>July 2025 Update:</strong> Judge dismissed our lawsuit - NYC Parks approved to cut down trees. Time is running out. 
+              <strong>July 2025 Update:</strong> Judge dismissed our lawsuit - NYC Parks approved to cut down trees. Time is running out.
               <Link href="/news" className="underline ml-1">Stay informed →</Link>
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
               There&apos;s a Better Way
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              We support sensible improvements that preserve trees and serve the community. 
+              We support sensible improvements that preserve trees and serve the community.
               See how we can enhance the park without destroying its natural character.
             </p>
           </div>
@@ -65,8 +65,8 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-destructive mb-4 text-center">NYC Parks Plan</h3>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
                   <ImageLightbox
-                    src="/img/Proposal-01.webp" 
-                    alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza" 
+                    src="/img/Proposal-01.webp"
+                    alt="NYC Parks Plan: Remove 78 Trees + Concrete Plaza"
                     width={800}
                     height={450}
                     className="object-cover"
@@ -86,8 +86,8 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-primary mb-4 text-center">Community Counter-Proposal</h3>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
                   <ImageLightbox
-                    src="/img/Counter-proposal-01.webp" 
-                    alt="Community Counter-Proposal: Preserve Trees + Smart Improvements" 
+                    src="/img/Counter-proposal-01.webp"
+                    alt="Community Counter-Proposal: Preserve Trees + Smart Improvements"
                     width={800}
                     height={450}
                     className="object-cover"
@@ -125,7 +125,7 @@ export default function Home() {
               The people using Fort Greene Park today depend on these trees for their daily comfort and health.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <CardContent className="p-6 text-center">
@@ -136,17 +136,17 @@ export default function Home() {
                 <p className="text-muted-foreground">Children playing, families picnicking, and neighbors exercising all rely on the cooling shade these mature trees provide</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="text-primary mb-4">
                   <ThermometerSun className="h-12 w-12 mx-auto" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">Less Heat</h3>
-                <p className="text-muted-foreground">Concrete plaza creates urban heat island effect, making the park uncomfortably hot instead of the cool oasis it is today</p>
+                <p className="text-muted-foreground">Concrete plaza creates urban heat island effect, making the park even hotter than it is today</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="text-primary mb-4">
@@ -156,7 +156,7 @@ export default function Home() {
                 <p className="text-muted-foreground">Trees naturally absorb city noise, creating the peaceful atmosphere that makes this park a true escape from urban stress</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="text-primary mb-4">
@@ -209,7 +209,7 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-8 text-center">
                 <Calendar className="h-12 w-12 mx-auto text-primary mb-4" />
@@ -222,7 +222,7 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-8 text-center">
                 <TreePine className="h-12 w-12 mx-auto text-primary mb-4" />
