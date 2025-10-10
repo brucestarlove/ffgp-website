@@ -5,12 +5,24 @@ import { z } from 'zod'
 
 const petitionSchema = z.object({
   name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Valid email is required'),
+  email: z.union([z.string().email(), z.literal('')]).optional(),
   zipCode: z.string().optional(),
   phone: z.string().optional(),
   message: z.string().optional(),
   keepInformed: z.boolean().default(false),
-})
+}).refine(
+  (data) => {
+    // If keepInformed is true, email must be provided and valid
+    if (data.keepInformed) {
+      return data.email && data.email.length > 0 && z.string().email().safeParse(data.email).success
+    }
+    return true
+  },
+  {
+    message: 'Please enter a valid email address',
+    path: ['email'],
+  }
+)
 
 export async function POST(request: NextRequest) {
   try {

@@ -10,7 +10,7 @@ import { FileText, CheckCircle } from "lucide-react"
 
 interface PetitionFormData {
   name: string
-  email: string
+  email?: string
   zipCode: string
   phone: string
   message: string
@@ -35,6 +35,13 @@ export function PetitionForm() {
     setIsSubmitting(true)
     setError(null)
     
+    // Client-side validation: if keepInformed is checked, email must be provided
+    if (formData.keepInformed && (!formData.email || formData.email.trim() === '')) {
+      setError('Please provide an email address to stay informed')
+      setIsSubmitting(false)
+      return
+    }
+    
     try {
       const response = await fetch('/api/petition', {
         method: 'POST',
@@ -46,12 +53,6 @@ export function PetitionForm() {
 
       if (!response.ok) {
         const errorData = await response.json()
-        
-        if (errorData.error === 'duplicate_email') {
-          setError('This email address has already signed the petition. Thank you for your support!')
-          return
-        }
-        
         throw new Error(errorData.message || 'Failed to submit petition')
       }
 
@@ -120,11 +121,10 @@ export function PetitionForm() {
             </div>
             
             <div>
-              <Label htmlFor="email" className="pb-2">Email Address *</Label>
+              <Label htmlFor="email" className="pb-2">Email Address (Optional)</Label>
               <Input
                 id="email"
                 type="email"
-                required
                 value={formData.email}
                 onChange={(e) => updateField('email', e.target.value)}
                 placeholder="Enter your email"
