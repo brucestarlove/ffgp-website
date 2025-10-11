@@ -146,7 +146,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="space-y-2 pt-2">
+            {/* <div className="space-y-2 pt-2">
               <h3 className="font-semibold text-foreground">Support Us</h3>
               <div className="flex items-center gap-4">
                 <a 
@@ -171,7 +171,7 @@ export function Footer() {
                   Venmo or Zelle
                 </a>
               </div>
-            </div>
+            </div> */}
             
           </div>
         </div>
