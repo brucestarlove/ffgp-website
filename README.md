@@ -1,6 +1,6 @@
 tryna save them trees
 
-didn't go all the way with re-using code, just generating & editing & shipping fast
+didn't try to make this a well-engineered, maintainable app. just generating & editing & shipping fast
 
 `npm i`
 

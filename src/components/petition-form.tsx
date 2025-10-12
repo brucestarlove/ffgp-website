@@ -130,6 +130,21 @@ export function PetitionForm() {
                 placeholder="Enter your email"
               />
             </div>
+
+            <div className="pb-2">
+              <div className="flex items-start space-x-3">
+                <input
+                  id="keepInformed"
+                  type="checkbox"
+                  checked={formData.keepInformed}
+                  onChange={(e) => updateField('keepInformed', e.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded border-2 border-input bg-background text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-primary checked:bg-primary checked:border-primary disabled:cursor-not-allowed disabled:opacity-50"
+                />
+                <Label htmlFor="keepInformed" className="text-sm font-normal cursor-pointer leading-relaxed">
+                  Keep me informed by email
+                </Label>
+              </div>
+            </div>
             
             <div>
               <Label htmlFor="zipCode" className="pb-2">ZIP Code (Optional)</Label>
@@ -143,17 +158,6 @@ export function PetitionForm() {
             </div>
             
             <div>
-              <Label htmlFor="phone" className="pb-2">Phone Number (Optional)</Label>
-              <Input
-                id="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={(e) => updateField('phone', e.target.value)}
-                placeholder="Your phone number"
-              />
-            </div>
-            
-            <div>
               <Label htmlFor="message" className="pb-2">Personal Message (Optional)</Label>
               <Textarea
                 id="message"
@@ -162,21 +166,6 @@ export function PetitionForm() {
                 placeholder="Share your thoughts and tell NYC Parks what we want for our park"
                 rows={3}
               />
-            </div>
-
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start space-x-3">
-                <input
-                  id="keepInformed"
-                  type="checkbox"
-                  checked={formData.keepInformed}
-                  onChange={(e) => updateField('keepInformed', e.target.checked)}
-                  className="mt-0.5 h-4 w-4 rounded border-2 border-input bg-background text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-primary checked:bg-primary checked:border-primary disabled:cursor-not-allowed disabled:opacity-50"
-                />
-                <Label htmlFor="keepInformed" className="text-sm font-normal cursor-pointer leading-relaxed">
-                  Keep me informed by email
-                </Label>
-              </div>
             </div>
             
             <Button type="submit" className="w-full" disabled={isSubmitting}>
