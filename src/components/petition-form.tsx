@@ -109,14 +109,14 @@ export function PetitionForm() {
             )}
             
             <div>
-              <Label htmlFor="name" className="pb-2">Full Name *</Label>
+              <Label htmlFor="name" className="pb-2">Name *</Label>
               <Input
                 id="name"
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) => updateField('name', e.target.value)}
-                placeholder="Enter your full name"
+                placeholder="Your last name will appear as an initial"
               />
             </div>
             
@@ -127,7 +127,7 @@ export function PetitionForm() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => updateField('email', e.target.value)}
-                placeholder="Enter your email"
+                placeholder="Enter your email and consent to stay informed"
               />
             </div>
 
