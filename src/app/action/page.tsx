@@ -199,7 +199,7 @@ export default function ActionPage() {
                   <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
                   <h3 className="font-semibold text-lg mb-2">Black & White Flyer</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Printer-friendly version
+                    Economic option
                   </p>
                   <Button asChild className="w-full" variant="outline">
                     <Link href="/flyer-bw.pdf" target="_blank">
