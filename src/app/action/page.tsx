@@ -4,12 +4,13 @@ import Link from "next/link"
 import { 
   FileText,
   Phone, 
-  DollarSign, 
   Users, 
   Mail, 
-  ExternalLink,
-  AlertTriangle
+  AlertTriangle,
+  Download,
+  QrCode
 } from "lucide-react"
+import Image from "next/image"
 import { PetitionForm } from "@/components/petition-form"
 import { PetitionCounter } from "@/components/petition-counter"
 import { Metadata } from "next"
@@ -155,6 +156,86 @@ export default function ActionPage() {
                       </Link>
                     </Button>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      { /* QR Code */ }
+      <section id="support" className="bg-muted py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Share the Campaign
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Download the PDFs (color or black and white) and share with your neighbors!
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* PDF Flyer Downloads */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">Color Flyer</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Print and share with your neighbors
+                  </p>
+                  <Button asChild className="w-full" variant="default">
+                    <Link href="/flyer-color.pdf" target="_blank">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download Color PDF
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">Black & White Flyer</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Printer-friendly version
+                  </p>
+                  <Button asChild className="w-full" variant="outline">
+                    <Link href="/flyer-bw.pdf" target="_blank">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download B&W PDF
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* QR Code Section */}
+            <Card className="border-2 border-primary/20">
+              <CardContent className="p-8">
+                <div className="text-center space-y-4">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <QrCode className="h-6 w-6 text-primary" />
+                    <h3 className="font-semibold text-xl">Share via QR Code</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    Scan to sign the petition and join the movement
+                  </p>
+                  <div className="flex justify-center">
+                    <div className="bg-white p-4 rounded-lg shadow-md inline-block">
+                      <Image 
+                        src="/qr-petition-page.png" 
+                        alt="QR Code to Petition Page" 
+                        width={280} 
+                        height={280}
+                        className="rounded"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-4">
+                    Point your camera at the QR code to open the petition page
+                  </p>
                 </div>
               </CardContent>
             </Card>
