@@ -124,7 +124,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
   ))
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn("w-full", className)}>        
       {/* Forest Grid */}
       <div
         className={cn(

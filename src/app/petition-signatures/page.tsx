@@ -1,5 +1,6 @@
 import { PetitionCounter } from "@/components/petition-counter"
 import { SignatureMosaic } from "@/components/signature-mosaic"
+import { TreePine } from "lucide-react"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -41,6 +42,23 @@ export default function PetitionSignaturesPage() {
           <PetitionCounter showViewSignaturesButton={false} size="large" />
         </div>
       </section>
+
+      <div className="flex flex-col items-center gap-3 text-center max-w-md mx-auto">
+        <div className="flex items-center gap-2 text-green-700">
+          <TreePine className="h-6 w-6" />
+          <span className="text-lg font-medium">Add your leaf to our canopy of voices</span>
+          <TreePine className="h-6 w-6" />
+        </div>
+        <p className="text-muted-foreground text-sm">
+          Join your Brooklyn neighbors in protecting Fort Greene Park&apos;s trees
+        </p>
+        <a
+          href="/action"
+          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+        >
+          Sign the Petition
+        </a>
+      </div>
 
       {/* Signatures Forest */}
       <section className="py-8 lg:py-12">
