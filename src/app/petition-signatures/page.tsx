@@ -30,7 +30,7 @@ export default function PetitionSignaturesPage() {
               <span className="text-primary block">Growing Together</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              Each signature represents a Brooklyn neighbor standing with us to save Fort Greene Park&apos;s mature trees. Together, we show NYC Parks that there are truly thousands of park users who wish to preserve the canopy and do not wish to see more concrete.
+              Each signature represents a Brooklyn neighbor standing with us to save Fort Greene Park&apos;s mature trees. Together, we show NYC Parks that there are truly thousands of park users who desire less concrete and better use of funds.
             </p>
           </div>
         </div>
