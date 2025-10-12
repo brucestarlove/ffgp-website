@@ -43,31 +43,23 @@ export default function PetitionSignaturesPage() {
         </div>
       </section>
 
-      <div className="flex flex-col items-center gap-3 text-center max-w-md mx-auto">
-        <div className="flex items-center gap-2 text-green-700">
-          <TreePine className="h-6 w-6" />
-          <span className="text-lg font-medium">Add your leaf to our canopy of voices</span>
-          <TreePine className="h-6 w-6" />
-        </div>
-        <p className="text-muted-foreground text-sm">
-          Join your Brooklyn neighbors in protecting Fort Greene Park&apos;s trees
-        </p>
-        <a
-          href="/action"
-          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
-        >
-          Sign the Petition
-        </a>
-      </div>
-
       {/* Signatures Forest */}
-      <section className="py-8 lg:py-12">
+      <section className="py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Growing Forest</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Each leaf represents a neighbor who&apos;s signed the petition. Click on leaves with message icons to see supporter comments.
+              </p>
+
+              <p className="mt-1">
+                <a
+                href="/action"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Sign the Petition
+                </a>
               </p>
             </div>
 

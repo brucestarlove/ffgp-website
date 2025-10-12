@@ -159,7 +159,7 @@ export function SignatureMosaic({ initialSignatures = [], className }: Signature
         )}
 
         {!hasMore && signatures.length > 0 && (
-          <div className="flex flex-col items-center gap-3 text-center max-w-md mx-auto">
+          <div className="flex flex-col items-center gap-3 text-center max-w-md mx-auto my-4 md:my-8">
             <div className="flex items-center gap-2 text-green-700">
               <TreePine className="h-6 w-6" />
               <span className="text-lg font-medium">Add your leaf to our canopy of voices</span>
